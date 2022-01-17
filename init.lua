@@ -91,7 +91,7 @@ local starting_positions = {
   { x = 6055, y = -893 }, -- 22 Poison Challenge
   { x = 2747, y = -1514 }, -- 23 rising lava Challenge
 }
-local starting_position = 2
+local starting_position = 1
 
 ModTextFileSetContent("mods/AdventureMode/_virtual/magic_numbers.xml", string.format([[
 <MagicNumbers
@@ -121,7 +121,7 @@ function OnPlayerSpawned(player)
   if GlobalsGetValue("AdventureMode_player_initialized", "0") == "0" then
     GlobalsSetValue("AdventureMode_player_initialized", "1")
     if starting_position == 1 then
-      EntityLoad("mods/AdventureMode/files/intro.xml")
+      EntityLoad("mods/SpookyMode/files/intro.xml")
     else
       GlobalsSetValue("AdventureMode_respawn_x", starting_positions[starting_position].x)
       GlobalsSetValue("AdventureMode_respawn_y", starting_positions[starting_position].y)
