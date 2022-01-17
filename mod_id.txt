@@ -1,1 +1,1 @@
-AdventureMode
+SpookyMode
