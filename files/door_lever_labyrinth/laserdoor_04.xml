@@ -1,0 +1,16 @@
+<Entity>	
+
+	<Base file="mods/AdventureMode/files/door_lever_labyrinth/laserdoor_right.xml">
+  </Base>
+
+	<VariableStorageComponent
+		name="color"
+		value_string="pink"
+	></VariableStorageComponent>
+
+	<!-- <VariableStorageComponent
+		name="default_state"
+		value_bool="0"
+	></VariableStorageComponent> -->
+
+</Entity>

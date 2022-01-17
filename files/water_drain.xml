@@ -1,0 +1,18 @@
+<Entity>
+  
+	<MagicConvertMaterialComponent
+		from_material_tag="[liquid]"
+		to_material="air"
+		steps_per_frame="100"
+		loop="1"
+		is_circle="1"
+		radius="300" >
+	</MagicConvertMaterialComponent>
+	
+	<LifetimeComponent
+	lifetime="10">
+	</LifetimeComponent>
+
+
+</Entity>
+

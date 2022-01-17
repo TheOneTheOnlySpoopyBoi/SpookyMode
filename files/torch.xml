@@ -1,0 +1,287 @@
+<Entity tags="kickable,teleportable_NOT,prop,torch">
+
+  <ItemComponent
+    _tags="enabled_in_world"
+    item_name="Charred stick"
+    ui_description="A charred stick?! What kind of reward is this?!"
+    ui_sprite="mods/AdventureMode/files/torch_off_ui_gfx.png"
+    max_child_items="0"
+    is_pickable="1"
+    is_equipable_forced="1"
+    play_hover_animation="1"
+    play_spinning_animation="0"
+    preferred_inventory="QUICK"
+  ></ItemComponent>
+
+  <UIInfoComponent
+    _tags="enabled_in_world"
+    name="Charred stick"
+  ></UIInfoComponent>
+
+	<AbilityComponent
+		ui_name="Charred stick"
+		throw_as_item="1"
+		><gun_config
+			deck_capacity="0"
+		></gun_config>
+	</AbilityComponent>
+
+  <VelocityComponent
+    _tags="enabled_in_world"
+  	gravity_y="400"
+  	air_friction="0.55"
+  	terminal_velocity="1000"
+  ></VelocityComponent>
+
+  <SimplePhysicsComponent
+    _enabled="0"
+    _tags="enabled_in_world"
+  ></SimplePhysicsComponent>
+
+  <HitboxComponent
+    _tags="enabled_in_world"
+    aabb_min_x="-3"
+    aabb_max_x="3"
+    aabb_min_y="-5"
+    aabb_max_y="0"
+    is_enemy="0"
+    is_item="0"
+    is_player="0"
+  ></HitboxComponent>
+
+  <SpriteComponent
+    _tags="enabled_in_world,character"
+    image_file="mods/AdventureMode/files/torch_unlit.png"
+    next_rect_animation="out"
+    rect_animation="out"
+    offset_animator_offset.y="3"
+  ></SpriteComponent>
+
+  <Entity name="sprite">
+
+    <InheritTransformComponent
+      only_position="1"
+    ></InheritTransformComponent>
+
+    <SpriteComponent
+      _enabled="0"
+      _tags="enabled_in_hand,enabled_in_world"
+      image_file="data/items_gfx/torch.xml"
+      next_rect_animation="out"
+      rect_animation="out"
+    ></SpriteComponent>
+
+    <LightComponent
+      _enabled="0"
+      _tags="fire"
+      r="255"
+      g="168"
+      b="155"
+      radius="64"
+      fade_out_time="0.75"
+    ></LightComponent>
+
+    <ParticleEmitterComponent
+      _enabled="0"
+      _tags="fire"
+      emitted_material_name="smoke"
+      offset.x="1"
+      offset.y="-6"
+      x_pos_offset_min="0"
+      x_pos_offset_max="0"
+      y_pos_offset_min="-1"
+      y_pos_offset_max="1"
+      x_vel_min="-10"
+      x_vel_max="10"
+      y_vel_min="-10"
+      y_vel_max="10"
+      count_min="5"
+      count_max="5"
+      lifetime_min="0.1"
+      lifetime_max="0.3"
+      create_real_particles="1"
+      emit_cosmetic_particles="0"
+      emission_interval_min_frames="60"
+      emission_interval_max_frames="250"
+      is_emitting="1"
+    ></ParticleEmitterComponent>
+
+    <ParticleEmitterComponent
+      _enabled="0"
+      _tags="fire"
+      emitted_material_name="spark"
+      custom_style="FIRE"
+      offset.x="1"
+      offset.y="-6"
+      x_pos_offset_min="-2"
+      x_pos_offset_max="-1"
+      y_pos_offset_min="-2"
+      y_pos_offset_max="1"
+      x_vel_min="-2"
+      x_vel_max="2"
+      y_vel_min="-20"
+      y_vel_max="-10"
+      count_min="1"
+      count_max="2"
+      lifetime_min="0.3"
+      lifetime_max="0.4"
+      create_real_particles="1"
+      emit_cosmetic_particles="0"
+      emission_interval_min_frames="1"
+      emission_interval_max_frames="3"
+      is_emitting="1"
+    ></ParticleEmitterComponent>
+
+    <ParticleEmitterComponent
+      _enabled="0"
+      _tags="fire"
+      emitted_material_name="spark"
+      offset.x="1"
+      offset.y="-6"
+      x_pos_offset_min="-1"
+      x_pos_offset_max="0"
+      y_pos_offset_min="-2"
+      y_pos_offset_max="1"
+      x_vel_min="-2"
+      x_vel_max="2"
+      y_vel_min="-20"
+      y_vel_max="-10"
+      count_min="1"
+      count_max="2"
+      lifetime_min="0.3"
+      lifetime_max="0.4"
+      create_real_particles="1"
+      emit_cosmetic_particles="0"
+      emission_interval_min_frames="2"
+      emission_interval_max_frames="6"
+      is_emitting="1"
+    ></ParticleEmitterComponent>
+
+    <ParticleEmitterComponent
+      _enabled="0"
+      _tags="fire"
+      emitted_material_name="fire"
+      offset.x="1"
+      offset.y="-4"
+      x_pos_offset_min="-1"
+      x_pos_offset_max="1"
+      y_pos_offset_min="-1"
+      y_pos_offset_max="1"
+      x_vel_min="-2"
+      x_vel_max="2"
+      y_vel_min="-20"
+      y_vel_max="-10"
+      count_min="1"
+      count_max="2"
+      lifetime_min="0.3"
+      lifetime_max="0.4"
+      create_real_particles="1"
+      emit_cosmetic_particles="0"
+      emission_interval_min_frames="2"
+      emission_interval_max_frames="6"
+      fire_cells_dont_ignite_damagemodel="1"
+    ></ParticleEmitterComponent>
+
+  </Entity>
+
+  <Entity name="burn">
+
+    <InheritTransformComponent
+      _tags="enabled_in_world"
+    ></InheritTransformComponent>
+
+    <MagicConvertMaterialComponent
+      _enabled="0"
+      radius="10"
+      is_circle="1"
+      steps_per_frame="1"
+      ignite_materials="1"
+      kill_when_finished="0"
+      reaction_audio_amount="1"
+    ></MagicConvertMaterialComponent> 
+  
+    <AudioComponent
+      _enabled="0"
+      _tags="fire"
+      file="data/audio/Desktop/projectiles.bank"
+      event_root="player_projectiles/torch"
+      set_latest_event_position="1" >
+    </AudioComponent>
+
+    <AudioLoopComponent
+      _enabled="0"
+      _tags="fire"
+      file="data/audio/Desktop/projectiles.bank"
+      event_name="player_projectiles/torch/loop"
+      auto_play_if_enabled="1"
+      play_on_component_enable="1" >
+    </AudioLoopComponent>
+
+  </Entity>
+  
+
+  <LuaComponent
+    _tags="enabled_in_hand,enabled_in_world,fire"
+    script_source_file="mods/AdventureMode/files/torch_light.lua"
+    script_enabled_changed="mods/AdventureMode/files/torch_light.lua"
+    execute_every_n_frame="1"
+    execute_on_added="1"
+  ></LuaComponent>
+
+  <LuaComponent
+    _tags="enabled_in_hand,enabled_in_world"
+    script_source_file="mods/AdventureMode/files/torch_reignite_checker.lua"
+    execute_every_n_frame="1"
+  ></LuaComponent>
+
+  <LuaComponent
+    _tags="enabled_in_world"
+    script_item_picked_up="mods/AdventureMode/files/torch_pickup.lua"
+    execute_every_n_frame="-1"
+  ></LuaComponent>
+
+  <VariableStorageComponent
+    _tags="enabled_in_hand,enabled_in_world,enabled_in_inventory"
+    name="is_on"
+    value_bool="0"
+  ></VariableStorageComponent>
+<!-- MaterialSuckerComponent -->
+    <!-- _tags="enabled_in_hand,enabled_in_inventory" -->
+  <MaterialAreaCheckerComponent
+    _tags="enabled_in_hand,enabled_in_world,enabled_in_inventory"
+    look_for_failure="0"
+    kill_after_message="0"
+    material="water"
+    material2="water"
+    area_aabb.min_x="0"
+    area_aabb.min_y="0"
+    area_aabb.max_x="1"
+    area_aabb.max_y="1"
+  ></MaterialAreaCheckerComponent>
+  
+  <MaterialAreaCheckerComponent
+    _tags="enabled_in_hand,enabled_in_world,enabled_in_inventory"
+    look_for_failure="0"
+    kill_after_message="0"
+    material="poison_permanent"
+    material2="poison_permanent"
+    area_aabb.min_x="0"
+    area_aabb.min_y="0"
+    area_aabb.max_x="1"
+    area_aabb.max_y="1"
+  ></MaterialAreaCheckerComponent>
+
+  <LuaComponent
+    _tags="enabled_in_hand,enabled_in_world,enabled_in_inventory"
+    script_material_area_checker_success="mods/AdventureMode/files/torch_material_checker.lua"
+    execute_every_n_frame="-1"
+  ></LuaComponent>
+  
+	<LuaComponent
+		_tags="enabled_in_world"
+		script_source_file="mods/AdventureMode/files/torch_float.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+</Entity>

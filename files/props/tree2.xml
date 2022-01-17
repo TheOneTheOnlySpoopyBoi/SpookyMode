@@ -1,0 +1,10 @@
+<Entity>
+
+  <PixelSpriteComponent
+    image_file="data/vegetation/tree_spruce_1.png"
+    anchor_x="32"
+    anchor_y="123"
+    material="wood_loose"
+  ></PixelSpriteComponent>
+
+</Entity>

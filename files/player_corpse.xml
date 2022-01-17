@@ -1,0 +1,56 @@
+<Entity>
+
+  <VelocityComponent
+  ></VelocityComponent>
+
+  <SimplePhysicsComponent
+  ></SimplePhysicsComponent>
+
+  <SpriteComponent
+    image_file="data/enemies_gfx/player.xml" 
+    next_rect_animation="" 
+    offset_x="6" 
+    offset_y="14" 
+    rect_animation="walk" 
+    z_index="0.6"
+  ></SpriteComponent>
+
+  <DamageModelComponent
+    hp="0"
+    max_hp="0"
+    air_in_lungs="0"
+    air_in_lungs_max="0"
+    ragdoll_offset_y="-5"
+    ragdoll_filenames_file="data/ragdolls/player/filenames.txt"
+    ragdoll_material="player_corpse"
+  ></DamageModelComponent>
+  
+<!--   <MaterialAreaCheckerComponent
+    look_for_failure="1"
+    kill_after_message="0"
+    material="smoke_static"
+    material2="smoke_static"
+    area_aabb.min_x="0"
+    area_aabb.min_y="0"
+    area_aabb.max_x="0"
+    area_aabb.max_y="0"
+  ></MaterialAreaCheckerComponent>
+  
+  <MaterialAreaCheckerComponent
+    look_for_failure="0"
+    kill_after_message="0"
+    material="smoke_static"
+    material2="smoke_static"
+    area_aabb.min_x="0"
+    area_aabb.min_y="0"
+    area_aabb.max_x="0"
+    area_aabb.max_y="0"
+  ></MaterialAreaCheckerComponent>
+
+  <LuaComponent
+    script_material_area_checker_success="mods/AdventureMode/files/no_corpse_if_in_smoke.lua"
+	script_material_area_checker_failed="mods/AdventureMode/files/no_corpse_if_in_smoke.lua"
+    execute_every_n_frame="-1"
+  ></LuaComponent> -->
+
+</Entity>

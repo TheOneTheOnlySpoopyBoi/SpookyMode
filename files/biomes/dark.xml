@@ -1,0 +1,13 @@
+<Biome>
+  <Topology 
+    name="_EMPTY_"
+    lua_script="mods/AdventureMode/files/biomes/desert.lua"
+    fog_of_war_type="HEAVY_NO_CLEAR"
+	audio_ambience="wandcave"
+    >
+  </Topology>
+  <Materials 
+    name="empty" 
+     >
+  </Materials>
+</Biome>

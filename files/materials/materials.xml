@@ -1,0 +1,213 @@
+<Materials>
+
+  <CellDataChild
+  	_parent="slime"
+  	_inherit_reactions="0"
+  	name="invisi_wall" 
+	ui_name=""
+	tags="[static]"
+	wang_color="888316a2" 
+	platform_type="0"
+	density="10"
+	durability="9999"
+	liquid_gravity="1.2"
+	liquid_sand="1"
+	liquid_static="1"
+	solid_static_type="1"
+	show_in_creative_mode="1"
+	>
+  	<Graphics
+		texture_file=""
+		color="00FFFFFF" >
+		<Edge>
+		</Edge>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+		</Stains>
+		<Ingestion>
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="rock_static_intro_breakable"
+  	_inherit_reactions="1"
+  	name="brittle_gravel" 
+	ui_name="Brittle Gravel"
+	wang_color="ff006c83">
+  	<Graphics
+	texture_file="mods/AdventureMode/files/materials/templebrick_broken.png"
+	color="ffAAF06E" >
+    </Graphics>
+  </CellDataChild>
+  
+  <CellData
+	name="magic_liquid_custom"
+	ui_name="$mat_magic_liquid"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="5.23"
+	cell_type="liquid"
+	wang_color="ff983013"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="150"
+	on_fire="0"
+	requires_oxygen="0"
+	audio_materialaudio_type="MAGICAL" 
+	>
+	<ParticleEffect
+		vel.y="2.86"
+		vel_random.min_x="-6"
+		vel_random.max_x="6"
+		vel_random.min_y="-2.9"
+		vel_random.max_y="3.2"
+		render_on_grid="1"
+		probability="0.6"
+		count.min="0"
+		count.max="1"
+	>
+	</ParticleEffect>
+	<Graphics 
+	color="80fffea2" >
+    </Graphics>
+  </CellData>
+  
+  <CellDataChild
+  	_parent="templebrick_static"
+	_inherit_reactions="1"
+	name="templebrick_gate_opener_eater"
+	wang_color="444d452c"
+	>
+  </CellDataChild>
+  
+  <CellDataChild
+  	_parent="templebrick_static"
+	_inherit_reactions="1"
+	name="templebrick_gate_opener_producer"
+	wang_color="4488711f"
+	>
+  </CellDataChild>
+  
+  <CellDataChild
+  	_parent="rock_magic_bottom"
+  	_inherit_reactions="0"
+  	name="rock_magic_bottom2" 
+	ui_name="$mat_rock_magic_bottom"
+	wang_color="ff696f20"
+	durability="12"
+	hp="400000"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	>
+  	<Graphics
+	texture_file="data/materials_gfx/magic_gate.png"
+	color="ffabb344" >
+    </Graphics>
+  </CellDataChild>
+  
+  <CellDataChild
+  	_parent="poison"
+	_inherit_reactions="0"
+	ui_name="$mat_poison"
+	name="poison_permanent"
+	wang_color="44183774"
+	>
+	<StatusEffects>
+		<Stains>
+		</Stains>
+		<Ingestion>
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+  
+  <CellDataChild
+  	_parent="slime"
+  	_inherit_reactions="0"
+  	name="endslime_custom" 
+	ui_name="Impermeable Slime"
+	tags="[static]"
+	wang_color="888AFF97" 
+	platform_type="0"
+	density="10"
+	durability="9999"
+	liquid_gravity="1.2"
+	liquid_sand="1"
+	liquid_static="1"
+	solid_static_type="1"
+	show_in_creative_mode="1"
+	>
+  	<Graphics
+		texture_file="data/materials_gfx/endslime.png"
+		color="88ab372c" >
+		<Edge>
+		 <EdgeGraphics 
+			overwrite="0" 
+			percent="0.3" 
+			require_same_material="0" 
+			require_same_material_type="1" 
+			type="EVERYWHERE" 
+			z="1" >
+			<Images>
+				<Image 
+					allow_random_rotation="1"
+					filename="data/materials_gfx/edge_files/edge_endslime_1.png" 
+				/>
+				<Image 
+					allow_random_rotation="1"
+					filename="data/materials_gfx/edge_files/edge_endslime_2.png" 
+				/>
+			</Images>
+		  </EdgeGraphics>
+		</Edge>
+    </Graphics>
+	<StatusEffects>
+		<Stains>
+		</Stains>
+		<Ingestion>
+		</Ingestion>
+	</StatusEffects>
+	<ParticleEffect
+		vel.y="-13.14"
+		vel_random.min_x="-11.71"
+		vel_random.max_x="11.71"
+		vel_random.min_y="-17.18"
+		vel_random.max_y="-2.8"
+		lifetime.min="0.9"
+		lifetime.max="1.6"
+		gravity.y="60"
+		render_on_grid="1"
+		airflow_force="0.5314"
+		airflow_scale="0.1371"
+		friction="0.0002"
+		probability="0.0045"
+		count.min="0"
+		count.max="1"
+	>
+	</ParticleEffect>
+  </CellDataChild>
+  
+  <Reaction probability="5"
+   input_cell1="poison_permanent" 			input_cell2="air"
+   output_cell1="poison_permanent" 		output_cell2="poison_gas" >
+  </Reaction>
+  
+  <Reaction probability="100"
+	input_cell1="magic_liquid_custom" 			input_cell2="rock_magic_bottom2"
+	output_cell1="magic_liquid_custom" 			output_cell2="magic_liquid_custom" 
+	>
+  </Reaction>
+  
+   <Reaction probability="90"
+   input_cell1="magic_liquid_custom" 	input_cell2="templebrick_gate_opener_eater"
+   output_cell1="smoke" 	output_cell2="templebrick_gate_opener_eater" >
+  </Reaction>
+  
+   <Reaction probability="20"
+   input_cell1="templebrick_gate_opener_producer" 	input_cell2="air"
+   output_cell1="templebrick_gate_opener_producer" 	output_cell2="magic_liquid_custom" >
+  </Reaction>
+
+</Materials>

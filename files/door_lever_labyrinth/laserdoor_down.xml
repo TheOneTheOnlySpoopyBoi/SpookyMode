@@ -1,0 +1,11 @@
+<Entity>
+
+	<Base file="mods/AdventureMode/files/door_lever_labyrinth/laserdoor_base.xml">
+  </Base>
+
+  <VariableStorageComponent
+    name="orientation"
+    value_string="v"
+  ></VariableStorageComponent>
+
+</Entity>

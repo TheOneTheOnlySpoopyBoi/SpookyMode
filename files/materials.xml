@@ -1,0 +1,55 @@
+<Materials>
+
+  <CellDataChild
+  	_parent="meat"
+    name="meat_camel"
+    ui_name="Camel meat"
+    wang_color="ffed4d49"
+    audio_physics_material_wall="meat"
+    audio_physics_material_solid="meat"
+	solid_on_collision_material=""
+    audio_is_soft="1"
+    show_in_creative_mode="0"
+	>
+    <StatusEffects>
+      <Ingestion>
+        <StatusEffect type="ADVENTUREMODE_SADNESS" amount="0.2" />
+      </Ingestion>
+	  </StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="meat"
+    name="player_corpse"
+    ui_name="Noita meat"
+    wang_color="ffed4d50"
+    burnable="0"
+    audio_physics_material_wall="meat"
+    audio_physics_material_solid="meat"
+    audio_is_soft="1"
+    show_in_creative_mode="0"
+	>
+    <StatusEffects>
+      <Ingestion>
+        <StatusEffect type="ADVENTUREMODE_CANNIBALISM" amount="0.2" />
+      </Ingestion>
+	  </StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="templebrick_static_broken"
+  	name="templebrick_static_broken2"
+    ui_name="$mat_templebrick_static"
+    wang_color="ff9e8439"
+    hp="10000"
+  ></CellDataChild>
+  
+  <CellDataChild
+  	_parent="wood_prop"
+  	name="door_material"
+    ui_name="$mat_templebrick_static"
+    wang_color="ff9e8440"
+    burnable="0"
+  ></CellDataChild>
+
+</Materials>
