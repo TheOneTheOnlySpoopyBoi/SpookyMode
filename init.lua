@@ -251,6 +251,21 @@ function OnWorldPreUpdate()
     if GuiButton(gui, new_id(), 0, 0, "Rattle me bones!") then
       GamePlaySound("mods/AdventureMode/files/audio/AdventureMode.bank", "rattle_me_bones", 0, 0)
     end
+    if GuiButton(gui, new_id(), 0, 0, "Swan!!") then
+      local player = EntityGetWithTag("player_unit")[1]
+      if player then
+        local x, y = EntityGetTransform(player)
+    GamePlaySound("mods/SpookyMode/files/audio/SpookyMode.bank", "swan_roar_wip", x+-70, y+100)
+    EntityLoad("mods/SpookyMode/files/lake_swan/lake_swan.xml", x, y+600)
+      end
+    end
+    if GuiButton(gui, new_id(), 0, 0, "Levi") then
+      local player = EntityGetWithTag("player_unit")[1]
+      if player then
+        local x, y = EntityGetTransform(player)
+    EntityLoad("data/entities/animals/boss_fish/fish_giga.xml", x, y+-100)
+      end
+    end
     if not old_pos then
       if GuiButton(gui, new_id(), 0, 0, "Teleport far away") then
         local player = EntityGetWithTag("player_unit")[1]

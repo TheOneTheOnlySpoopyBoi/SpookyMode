@@ -2,7 +2,7 @@ dofile_once("mods/SpookyMode/files/util.lua")
 
 if GlobalsGetValue("AdventureMode_game_complete", "0") == "0" then
 
-	local min_heatwarp_at_x = -300
+	local min_heatwarp_at_x = -1640
 	local max_heatwarp_at_x = -1650
 
 	local player = EntityGetWithTag("player_unit")[1]
@@ -14,7 +14,6 @@ if GlobalsGetValue("AdventureMode_game_complete", "0") == "0" then
 		local world_state_component = EntityGetFirstComponentIncludingDisabled(world_state_entity, "WorldStateComponent")
 		ComponentSetValue2(world_state_component, "fog_target_extra", heat_warp_amount)
 		ComponentSetValue2(world_state_component, "intro_weather", false)
-		-- GameSetPostFxParameter("heat_warp_amount", heat_warp_amount, 0, 0, 0)
 		if heat_warp_amount == 1 then
 		  -- local count = GameGetGameEffectCount(player, "CUSTOM")
 		  -- print("count: " .. type(count) .. " - " .. tostring(count))

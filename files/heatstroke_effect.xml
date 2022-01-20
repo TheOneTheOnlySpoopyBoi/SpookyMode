@@ -19,7 +19,7 @@
     icon_sprite_file="mods/AdventureMode/files/heatstroke_icon.png"
     name="Heatstrokey"
     description="You don't feel so goody..."
-    display_above_head="1"
+    display_above_head="0"
     display_in_hud="1"
     is_perk="0"
   ></UIIconComponent>

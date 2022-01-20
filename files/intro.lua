@@ -28,9 +28,9 @@ end,
 function()
   local player = EntityGetWithTag("player_unit")[1]
   local x, y = EntityGetTransform(player)
-  local camel = EntityLoad("mods/AdventureMode/files/camel.xml", x - 30, y)
+  local sheep = EntityLoad("data/entities/animals/sheep.xml", x - 30, y)
   local character_data_component = EntityGetFirstComponentIncludingDisabled(player, "CharacterDataComponent")
-  local character_data_component_camel = EntityGetFirstComponentIncludingDisabled(camel, "CharacterDataComponent")
+  local character_data_component_sheep = EntityGetFirstComponentIncludingDisabled(sheep, "CharacterDataComponent")
   local controls_component = EntityGetFirstComponentIncludingDisabled(player, "ControlsComponent")
   local platform_shooter_player_component = EntityGetFirstComponentIncludingDisabled(player, "PlatformShooterPlayerComponent")
   local wand_angle = 15
@@ -56,24 +56,24 @@ function()
     ComponentSetValue2(character_data_component, "mVelocity", 35, 0)
     ComponentSetValue2(character_data_component, "is_on_ground", true)
 
-    ComponentSetValue2(character_data_component_camel, "mVelocity", 35 - 15 * (i/800), 0)
-    ComponentSetValue2(character_data_component_camel, "is_on_ground", true)
+    ComponentSetValue2(character_data_component_sheep, "mVelocity", 35 - 15 * (i/800), 0)
+    ComponentSetValue2(character_data_component_sheep, "is_on_ground", true)
     wait(0)
   end
-  -- Camel keeps walking but slows down more
+  -- sheep keeps walking but slows down more
   for i=1, 160 do
-    ComponentSetValue2(character_data_component_camel, "mVelocity", 20 - 15 * (i/160), 0)
-    ComponentSetValue2(character_data_component_camel, "is_on_ground", true)
+    ComponentSetValue2(character_data_component_sheep, "mVelocity", 20 - 15 * (i/160), 0)
+    ComponentSetValue2(character_data_component_sheep, "is_on_ground", true)
     wait(0)
   end
 
-  local damage_model_component_camel = EntityGetFirstComponentIncludingDisabled(camel, "DamageModelComponent")
-  ComponentSetValue2(damage_model_component_camel, "air_in_lungs", -1)
-  ComponentSetValue2(damage_model_component_camel, "air_in_lungs_max", 0)
-  local camel_x, camel_y = EntityGetTransform(camel)
-  GamePlaySound("mods/AdventureMode/files/audio/AdventureMode.bank", "camel_death", camel_x, camel_y)
+  local damage_model_component_sheep = EntityGetFirstComponentIncludingDisabled(sheep, "DamageModelComponent")
+  ComponentSetValue2(damage_model_component_sheep, "air_in_lungs", -1)
+  ComponentSetValue2(damage_model_component_sheep, "air_in_lungs_max", 0)
+  local sheep_x, sheep_y = EntityGetTransform(sheep)
+  GamePlaySound("data/audio/Desktop/animals.bank", "animals/sheep/_death", sheep_x, sheep_y)
   wait(100)
-  -- The Noita turns around to look at the dead camel
+  -- The Noita turns around to look at the dead sheep
   ComponentSetValue2(controls_component, "mAimingVector", -1, vy)
   ComponentSetValue2(controls_component, "mAimingVectorNormalized", -5000, vy)
   ComponentSetValue2(controls_component, "mAimingVectorNonZeroLatest", -5000, vy)
