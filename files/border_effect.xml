@@ -5,12 +5,12 @@
 	<GameEffectComponent 
 		effect="CUSTOM"
 		custom_effect_id="SPOOKYMODE_BORDER"
-		frames="1001">
+		frames="2001">
 	</GameEffectComponent>	
 
 	<LuaComponent
 		script_source_file="mods/SpookyMode/files/border_on.lua"
-		execute_every_n_frame="1000"
+		execute_every_n_frame="2000"
     remove_after_executed="1"
     >
 	</LuaComponent>
@@ -19,7 +19,7 @@
     icon_sprite_file="mods/SpookyMode/files/border_icon.png"
     name="Watched"
     description="You feel unsafe in the waters..."
-    display_above_head="1"
+    display_above_head="0"
     display_in_hud="1"
     is_perk="0"
   ></UIIconComponent>
