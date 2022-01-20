@@ -480,27 +480,6 @@
 	
   <!-- example entity load through VegetationComponent -->
 
-  <!--
-  <VegetationComponent 
-      _enabled="1" 
-      is_visual="1" 
-      rand_seed="12376.86" 
-      tree_extra_y="14" 
-      load_this_xml_instead="data/entities/_debug/debug_marker.xml" 
-      tree_image_visual="" 
-      tree_material="fungus_loose" 
-      tree_probability="0.38571" 
-      tree_radius_high="0.5286" 
-      tree_radius_low="0.228571" 
-      tree_width="76.1143" 
-      visual_color="0xffb89f6c" 
-      visual_offset_x="3" 
-      visual_offset_y="7.5" 
-    >
-    </VegetationComponent>
-
-  -->
-
 	<VegetationComponent 
       _enabled="1" 
       is_visual="0" 
