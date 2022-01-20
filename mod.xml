@@ -1,5 +1,5 @@
 <Mod
-	name="Adventure Mode"
+	name="Spooky Mode"
 	description="Go on a predefined adventure and solve puzzles"
 	request_no_api_restrictions="0"
 	ui_newgame_name="Spooks Mode"
