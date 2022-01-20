@@ -67,9 +67,14 @@ local y_offset = -1 -- Move pixel scenes 1 chunk up (-512)
 local str = "<PixelScenes><mBufferedPixelScenes>"
 local pixel_scenes_root_folder = "mods/SpookyMode/files/pixel_scenes"
 for i, chunk in ipairs(chunks) do
-  str = str .. ([[<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename=""
-    material_filename="%s/%d_%d.png" pos_x="%d" pos_y="%d" skip_biome_checks="1" skip_edge_textures="0" />
-  ]]):format(pixel_scenes_root_folder, chunk[1], chunk[2], chunk[1] * 512, (chunk[2]+y_offset) * 512)
+  local has_background = chunk[3]
+  local has_visual = chunk[4]
+  local material_filename = ("%s/%d_%d.png"):format(pixel_scenes_root_folder, chunk[1], chunk[2])
+  local background_filename = has_background and ("%s/%d_%d_background.png"):format(pixel_scenes_root_folder, chunk[1], chunk[2]) or ""
+  local visual_filename = has_visual and ("%s/%d_%d_visual.png"):format(pixel_scenes_root_folder, chunk[1], chunk[2]) or ""
+  str = str .. ([[<PixelScene DEBUG_RELOAD_ME="0" background_filename="%s" clean_area_before="0" colors_filename="%s"
+    material_filename="%s" pos_x="%d" pos_y="%d" skip_biome_checks="1" skip_edge_textures="0" />
+  ]]):format(background_filename, visual_filename, material_filename,  chunk[1] * 512, (chunk[2]+y_offset) * 512)
 end
 str = str .. "</mBufferedPixelScenes></PixelScenes>"
 print(str)

@@ -39,16 +39,36 @@ document.body.style.setProperty("--num-tiles-y", size.y);
 const container = document.getElementById('container');
 
 chunks.forEach(chunk => {
-  const [ x, y ] = chunk;
+  const [ x, y, has_background, has_visual ] = chunk;
   const div = document.createElement('div');
   const span = document.createElement('span');
-  const img = document.createElement('img');
-  img.src = `./files/pixel_scenes/${x}_${y}.png`;
+
   span.innerText = `${x}_${y}.png`;
+  span.style.setProperty('z-index', 4);
   div.style.setProperty('position', 'absolute');
   div.style.setProperty('left', (x - extents.minX) * 256 + 'px');
   div.style.setProperty('top', (y - extents.minY) * 256 + 'px');
   div.appendChild(span);
+
+  const img = document.createElement('img');
+  img.src = `./files/pixel_scenes/${x}_${y}.png`;
+  img.style.setProperty('z-index', 1);
+
+  if(has_background) {
+    const img = document.createElement('img');
+    img.src = `./files/pixel_scenes/${x}_${y}_background.png`;
+    img.style.setProperty('z-index', 2);
+    img.style.setProperty('opacity', 0.5);
+    div.appendChild(img);
+  }
+
+  if(has_visual) {
+    const img = document.createElement('img');
+    img.src = `./files/pixel_scenes/${x}_${y}_visual.png`;
+    img.style.setProperty('z-index', 3);
+    div.appendChild(img);
+  }
+
   div.appendChild(img);
   container.appendChild(div);
 });

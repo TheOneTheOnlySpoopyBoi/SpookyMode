@@ -1,3 +1,4 @@
+-- Format: { x:int, y:int, has_background:boolean, has_visual:boolean }
 return {
   { -6, 0 },
   { -5, 0 },
