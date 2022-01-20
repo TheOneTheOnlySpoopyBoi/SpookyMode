@@ -1,0 +1,49 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  background:rgb(170, 163, 163);
+  --num-tiles-x: 6;
+  --num-tiles-y: 2;
+  --num-tiles-y: 2;
+  --num-tiles-y: 2;
+  --tile-size: calc(512px / 2);
+}
+#container {
+  display: grid;
+  grid-template-columns: repeat(var(--num-tiles-x), var(--tile-size));
+  grid-template-rows: repeat(var(--num-tiles-y), var(--tile-size));
+  line-height: 0px;
+}
+#container div {
+  position: relative;
+}
+#container div:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgb(207 207 207 / 24%);
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+#container div:hover span {
+  visibility: visible;
+}
+#container span {
+  visibility: hidden;
+  position: absolute;
+  padding: 10px;
+  background: white;
+  font-size: 38px;
+  line-height: 38px;
+}
+#container img {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  width: var(--tile-size);
+  height: var(--tile-size);
+  background: rgb(255, 255, 255);
+}

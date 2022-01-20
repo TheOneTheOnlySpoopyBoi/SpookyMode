@@ -55,6 +55,25 @@ xml:add_children(nxml.parse_many([[
 ]]))
 ModTextFileSetContent("data/biome/_biomes_all.xml", tostring(xml))
 
+-- Generate _pixel_scenes.xml from chunks defined in another file
+-- Name the chunks according to their position on the map, like:
+-- 0_0.png to place it at 0, 0
+-- 1_0.png to place it at 512, 0
+-- 1_1.png to place it at 512, 512
+-- and so forth, then add those numbers (without png) to the chunks_to_load.lua
+local chunks = dofile_once("mods/SpookyMode/files/chunks_to_load.lua")
+
+local y_offset = -1 -- Move pixel scenes 1 chunk up (-512)
+local str = "<PixelScenes><mBufferedPixelScenes>"
+local pixel_scenes_root_folder = "mods/SpookyMode/files/pixel_scenes"
+for i, chunk in ipairs(chunks) do
+  str = str .. ([[<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename=""
+    material_filename="%s/%d_%d.png" pos_x="%d" pos_y="%d" skip_biome_checks="1" skip_edge_textures="0" />
+  ]]):format(pixel_scenes_root_folder, chunk[1], chunk[2], chunk[1] * 512, (chunk[2]+y_offset) * 512)
+end
+str = str .. "</mBufferedPixelScenes></PixelScenes>"
+print(str)
+ModTextFileSetContent("data/biome/_pixel_scenes.xml", str)
 
 local starting_position = 1
 local starting_positions = {
