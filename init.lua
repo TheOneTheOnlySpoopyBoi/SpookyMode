@@ -82,7 +82,7 @@ ModTextFileSetContent("data/biome/_pixel_scenes.xml", str)
 
 local starting_position = 1
 local starting_positions = {
-  { x = -101, y = -113 }, -- 1 Intro
+  { x = -1542, y = -80 }, -- 1 Intro
 }
 
 ModTextFileSetContent("mods/AdventureMode/_virtual/magic_numbers.xml", string.format([[
