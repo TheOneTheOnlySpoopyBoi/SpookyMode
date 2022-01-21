@@ -15,12 +15,12 @@
     <PhysicsImageShapeComponent
       body_id="1"
       centered="1"
-      image_file="mods/AdventureMode/files/brazier.png"
+      image_file="mods/SpookyMode/files/brazier.png"
       material="rock_box2d_hard"
     ></PhysicsImageShapeComponent> -->
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/brazier.png"
+    image_file="mods/SpookyMode/files/brazier.png"
     offset_x="7"
     offset_y="11"
   ></SpriteComponent>

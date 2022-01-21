@@ -5,7 +5,7 @@ local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)
 
 function turn_all_torches_off_and_reset_plates()
-  GlobalsSetValue("AdventureMode_torch_puzzle_last_order_pressed", "0")
+  GlobalsSetValue("SpookyMode_torch_puzzle_last_order_pressed", "0")
   local pressure_plates = EntityGetWithTag("pressure_plate")
   for i, plate in ipairs(pressure_plates) do
     EntityAddComponent2(plate, "VariableStorageComponent", { name = "reset" })
@@ -15,19 +15,19 @@ end
 function down()
   local var_store_order = get_variable_storage_component(entity_id, "order")
   local order = ComponentGetValue2(var_store_order, "value_int")
-  GlobalsSetValue("AdventureMode_puzzle_torch_active_" .. order, "1")
-  local last_order_pressed = tonumber(GlobalsGetValue("AdventureMode_torch_puzzle_last_order_pressed", "0"))
+  GlobalsSetValue("SpookyMode_puzzle_torch_active_" .. order, "1")
+  local last_order_pressed = tonumber(GlobalsGetValue("SpookyMode_torch_puzzle_last_order_pressed", "0"))
   if (last_order_pressed + 1) ~= order then
     turn_all_torches_off_and_reset_plates()
   else
-    GlobalsSetValue("AdventureMode_torch_puzzle_last_order_pressed", last_order_pressed + 1)
+    GlobalsSetValue("SpookyMode_torch_puzzle_last_order_pressed", last_order_pressed + 1)
   end
 end
 
 function up()
   local var_store_order = get_variable_storage_component(entity_id, "order")
   local order = ComponentGetValue2(var_store_order, "value_int")
-  GlobalsSetValue("AdventureMode_puzzle_torch_active_" .. order, "0")
+  GlobalsSetValue("SpookyMode_puzzle_torch_active_" .. order, "0")
 end
 
 local var_store_reset = get_variable_storage_component(entity_id, "reset")

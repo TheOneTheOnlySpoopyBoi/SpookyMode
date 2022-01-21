@@ -1,6 +1,6 @@
 <Entity>	
 
-	<Base file="mods/AdventureMode/files/door_lever_labyrinth/laserdoor_right.xml">
+	<Base file="mods/SpookyMode/files/door_lever_labyrinth/laserdoor_right.xml">
   </Base>
 
 	<VariableStorageComponent

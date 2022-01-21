@@ -1,7 +1,7 @@
 <Entity>
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/skeletons/lying.png"
+    image_file="mods/SpookyMode/files/skeletons/lying.png"
     offset_x="10"
     offset_y="7"
     >
@@ -13,8 +13,8 @@
   ></InteractableComponent>
 
   <LuaComponent
-    script_source_file="mods/AdventureMode/files/skeletons/spike_corridor_01_interact.lua"
-    script_interacting="mods/AdventureMode/files/skeletons/spike_corridor_01_interact.lua"
+    script_source_file="mods/SpookyMode/files/skeletons/spike_corridor_01_interact.lua"
+    script_interacting="mods/SpookyMode/files/skeletons/spike_corridor_01_interact.lua"
     execute_every_n_frame="1"
     execute_on_added="1"
     enable_coroutines="1"

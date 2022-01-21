@@ -4,7 +4,7 @@
 
 	<GameEffectComponent
 		effect="CUSTOM"
-		custom_effect_id="ADVENTUREMODE_CANNIBALISM"
+		custom_effect_id="SPOOKYMODE_CANNIBALISM"
 		frames="60">
 	</GameEffectComponent>
 

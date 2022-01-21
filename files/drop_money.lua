@@ -42,7 +42,7 @@ function do_money_drop( amount_multiplier, trick_kill )
 	
 	local entity_list = {}
 	
-	local gold_entity = "mods/AdventureMode/files/pickups/goldnugget_"
+	local gold_entity = "mods/SpookyMode/files/pickups/goldnugget_"
 	local remove_timer = false
 	local drop_first_10 = true
 

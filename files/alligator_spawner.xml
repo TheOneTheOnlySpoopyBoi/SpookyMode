@@ -8,10 +8,10 @@
   ></CollisionTriggerComponent>
 
   <LuaComponent
-    script_collision_trigger_hit="mods/AdventureMode/files/alligator_spawner.lua"
+    script_collision_trigger_hit="mods/SpookyMode/files/alligator_spawner.lua"
     execute_every_n_frame="-1"
   ></LuaComponent>
 
-  <!-- <Base file="mods/AdventureMode/files/aabb_visualizer.xml" /> -->
+  <!-- <Base file="mods/SpookyMode/files/aabb_visualizer.xml" /> -->
 
 </Entity>

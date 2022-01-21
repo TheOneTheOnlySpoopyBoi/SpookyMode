@@ -1,14 +1,14 @@
 <Entity name="liquid_checker">
 
   <!-- <LuaComponent
-    script_source_file="mods/AdventureMode/files/visualize_aabb.lua"
+    script_source_file="mods/SpookyMode/files/visualize_aabb.lua"
     execute_every_n_frame="1"
     remove_after_executed="1"
     >
   </LuaComponent> -->
 
   <!-- <PixelSceneComponent
-    pixel_scene="mods/AdventureMode/files/pixel_scenes/liquid_checker.png"
+    pixel_scene="mods/SpookyMode/files/pixel_scenes/liquid_checker.png"
     offset_x="-40"
     offset_y="-33"
     skip_biome_checks="1"
@@ -26,8 +26,8 @@
   ></MaterialAreaCheckerComponent> -->
 
   <LuaComponent
-    script_material_area_checker_success="mods/AdventureMode/files/liquid_checker.lua"
-    script_source_file="mods/AdventureMode/files/liquid_checker.lua"
+    script_material_area_checker_success="mods/SpookyMode/files/liquid_checker.lua"
+    script_source_file="mods/SpookyMode/files/liquid_checker.lua"
     execute_every_n_frame="10"
     >
   </LuaComponent>

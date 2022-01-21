@@ -1,5 +1,5 @@
 <Sprite
- filename="mods/AdventureMode/files/creep_skull/alien_shot.png"
+ filename="mods/SpookyMode/files/creep_skull/alien_shot.png"
  offset_x="3"
  offset_y="3"
  default_animation="fireball" >

@@ -1,19 +1,19 @@
 <Entity>
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/ok_hand.png"
+    image_file="mods/SpookyMode/files/ok_hand.png"
     offset_x="49"
     offset_y="134"
   ></SpriteComponent>
 
   <PixelSceneComponent
-    pixel_scene="mods/AdventureMode/files/ok_hand_gem_spawner.png"
+    pixel_scene="mods/SpookyMode/files/ok_hand_gem_spawner.png"
     offset_x="-49"
     offset_y="-134"
   ></PixelSceneComponent>
 
   <LuaComponent
-    script_source_file="mods/AdventureMode/files/hand_holding_gem_player_check.lua"
+    script_source_file="mods/SpookyMode/files/hand_holding_gem_player_check.lua"
     execute_every_n_frame="1"
   ></LuaComponent>
 
@@ -27,7 +27,7 @@
     </InheritTransformComponent>
 
     <SpriteComponent
-      image_file="mods/AdventureMode/files/gem_in_hand.png"
+      image_file="mods/SpookyMode/files/gem_in_hand.png"
       offset_x="5"
       offset_y="5"
     ></SpriteComponent>
@@ -80,7 +80,7 @@
     ></ItemComponent>
 
     <LuaComponent
-      script_item_picked_up="mods/AdventureMode/files/gem_pickup.lua"
+      script_item_picked_up="mods/SpookyMode/files/gem_pickup.lua"
       execute_every_n_frame="-1"
     ></LuaComponent>
 

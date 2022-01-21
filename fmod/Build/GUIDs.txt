@@ -1,4 +1,4 @@
-{4e123a2e-408b-4222-b3f3-3661f92a7405} bank:/AdventureMode
+{4e123a2e-408b-4222-b3f3-3661f92a7405} bank:/SpookyMode
 {d3d376b6-af21-4ae3-917c-3e8fb781b724} bank:/Master Bank
 {4bce5662-de5a-06a1-1735-b4714672b1bc} bank:/Master Bank.strings
 {fd1ec6a6-24b7-4a2e-9988-9733b99dc81e} bus:/

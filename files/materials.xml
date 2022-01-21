@@ -13,7 +13,7 @@
 	>
     <StatusEffects>
       <Ingestion>
-        <StatusEffect type="ADVENTUREMODE_SADNESS" amount="0.2" />
+        <StatusEffect type="SPOOKYMODE_SADNESS" amount="0.2" />
       </Ingestion>
 	  </StatusEffects>
   </CellDataChild>
@@ -31,7 +31,7 @@
 	>
     <StatusEffects>
       <Ingestion>
-        <StatusEffect type="ADVENTUREMODE_CANNIBALISM" amount="0.2" />
+        <StatusEffect type="SPOOKYMODE_CANNIBALISM" amount="0.2" />
       </Ingestion>
 	  </StatusEffects>
   </CellDataChild>

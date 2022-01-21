@@ -3,7 +3,7 @@
 	<LuaComponent
 		_enabled="0"
 		_tags="particles"
-		script_source_file="mods/AdventureMode/files/rebirth_finger_particles.lua"
+		script_source_file="mods/SpookyMode/files/rebirth_finger_particles.lua"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>

@@ -1,5 +1,5 @@
 <Sprite 
-  filename="mods/AdventureMode/files/intro_logo/aloittaa.png" 
+  filename="mods/SpookyMode/files/intro_logo/aloittaa.png" 
   offset_x="78" 
   offset_y="28"
   default_animation="logo"  >

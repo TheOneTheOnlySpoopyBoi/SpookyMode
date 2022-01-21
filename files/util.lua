@@ -148,7 +148,7 @@ function visualize_aabb(entity_id, component_type)
   })
   EntityAddChild(entity_id, ent)
   EntityAddComponent2(ent, "SpriteComponent", {
-    image_file="mods/AdventureMode/files/box_10x10.png",
+    image_file="mods/SpookyMode/files/box_10x10.png",
     special_scale_x=scale_x,
     special_scale_y=scale_y,
     offset_x=-aabb.min_x / scale_x,

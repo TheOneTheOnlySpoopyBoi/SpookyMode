@@ -67,7 +67,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/AdventureMode/files/creep_skull/alien_shot.xml" 
+		image_file="mods/SpookyMode/files/creep_skull/alien_shot.xml" 
 		emissive="1"
 		additive="1"
 		>
@@ -172,7 +172,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/AdventureMode/files/creep_skull/orb_creep.xml"
+		value_string="mods/SpookyMode/files/creep_skull/orb_creep.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

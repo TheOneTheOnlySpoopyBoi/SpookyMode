@@ -226,7 +226,7 @@
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/AdventureMode/files/flame_beam.xml"
+		value_string="mods/SpookyMode/files/flame_beam.xml"
 		>
 	</VariableStorageComponent>
 

@@ -1,6 +1,6 @@
-dofile_once("mods/AdventureMode/lib/coroutines.lua")
-dofile_once("mods/AdventureMode/files/util.lua")
-dofile_once("mods/AdventureMode/files/camera.lua")
+dofile_once("mods/SpookyMode/lib/coroutines.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/camera.lua")
 
 local function get_player_position()
   local players = EntityGetWithTag("player_unit")
@@ -29,7 +29,7 @@ async(function()
 	  camera_tracking_shot(x, y, sx, sy, 0.01)
 	
 	  -- Clear pixel scene
-	  -- LoadPixelScene("mods/AdventureMode/files/temple_door_remover.png", "", door_x, door_y, "", true)
+	  -- LoadPixelScene("mods/SpookyMode/files/temple_door_remover.png", "", door_x, door_y, "", true)
 	  -- Open door
 	  GamePlaySound("data/audio/Desktop/animals.bank", "animals/boss_centipede/dying", sx, sy)
 
@@ -43,7 +43,7 @@ async(function()
 	  
 	  wait(40)
 	  
-	  EntityLoad("mods/AdventureMode/files/water_drain.xml", x - 272, y + 202)
+	  EntityLoad("mods/SpookyMode/files/water_drain.xml", x - 272, y + 202)
 	  EntitySetComponentIsEnabled( skull, animal_ai_component, true )
 	  set_controls_enabled(true)
 	  local x, y = get_player_position()

@@ -2,7 +2,7 @@
 
   <LuaComponent
     _enabled="1"
-    script_source_file="mods/AdventureMode/files/skull_creep_cutscene.lua"
+    script_source_file="mods/SpookyMode/files/skull_creep_cutscene.lua"
     execute_every_n_frame="-1"
     execute_on_added="1"
     enable_coroutines="1"

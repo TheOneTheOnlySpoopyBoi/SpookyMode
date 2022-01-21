@@ -17,7 +17,7 @@ local tag = "fish_attractor"
 		EntityAddTag( player_id, tag )
 		
 		EntityAddComponent(player_id, "LuaComponent", {
-			script_source_file="mods/AdventureMode/files/alligator/alligator_temple_attractor_checker.lua",
+			script_source_file="mods/SpookyMode/files/alligator/alligator_temple_attractor_checker.lua",
 			execute_every_n_frame=20,
 			execute_on_added=0,
 		}) 

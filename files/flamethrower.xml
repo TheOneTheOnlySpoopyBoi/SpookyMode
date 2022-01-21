@@ -1,7 +1,7 @@
 <Entity>
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/turret.png"
+    image_file="mods/SpookyMode/files/turret.png"
     offset_x="8"
   ></SpriteComponent>
 
@@ -15,12 +15,12 @@
     </InheritTransformComponent>
 
     <SpriteComponent
-      image_file="mods/AdventureMode/files/turret_gun.png"
+      image_file="mods/SpookyMode/files/turret_gun.png"
       offset_y="2"
     ></SpriteComponent>
 
     <LuaComponent
-      script_source_file="mods/AdventureMode/files/flamethrower.lua"
+      script_source_file="mods/SpookyMode/files/flamethrower.lua"
       execute_every_n_frame="1"
       execute_on_added="1"
       enable_coroutines="1"

@@ -89,7 +89,7 @@
 
 		<LuaComponent
 			execute_every_n_frame="-1"
-			script_death="mods/AdventureMode/files/drop_money.lua"
+			script_death="mods/SpookyMode/files/drop_money.lua"
 			remove_after_executed="1" >
 		</LuaComponent>
 		

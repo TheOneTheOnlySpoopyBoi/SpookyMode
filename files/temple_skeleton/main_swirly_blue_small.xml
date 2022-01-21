@@ -17,7 +17,7 @@
 		count.min="3"
 		count.max="7"
 		kill_entity="1"
-		entity_file="mods/AdventureMode/files/temple_skeleton/explosion_trail_swirl_blue_slow.xml" >
+		entity_file="mods/SpookyMode/files/temple_skeleton/explosion_trail_swirl_blue_slow.xml" >
 	</LoadEntitiesComponent>
 
 </Entity>

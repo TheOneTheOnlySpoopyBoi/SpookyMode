@@ -1,7 +1,7 @@
 <Entity>
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/platform.png"
+    image_file="mods/SpookyMode/files/platform.png"
     offset_x="5"
     has_special_scale="1"
     special_scale_x="2"
@@ -13,7 +13,7 @@
   ></HitboxComponent>
 
   <LuaComponent
-    script_source_file="mods/AdventureMode/files/platform.lua"
+    script_source_file="mods/SpookyMode/files/platform.lua"
     execute_every_n_frame="1"
   ></LuaComponent>
 

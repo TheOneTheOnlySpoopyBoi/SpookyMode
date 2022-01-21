@@ -1,5 +1,5 @@
 dofile_once("data/scripts/lib/utilities.lua")
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 -- function material_area_checker_success(x, y)
 
 	-- local entity_id = GetUpdatedEntityID()
@@ -22,7 +22,7 @@ function material_area_checker_failed(x, y)
 	local entity_id = GetUpdatedEntityID()
 	local x, y = EntityGetTransform( entity_id )
 
-	local corpse = EntityLoad("mods/AdventureMode/files/player_corpse.xml", x, y)
+	local corpse = EntityLoad("mods/SpookyMode/files/player_corpse.xml", x, y)
 	local vel_comp = EntityGetFirstComponentIncludingDisabled(corpse, "VelocityComponent")
 	local vx = get_var_store_float(entity_id, "vel_x")
 	local vy = get_var_store_float(entity_id, "vel_y")

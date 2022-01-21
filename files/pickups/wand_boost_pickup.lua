@@ -1,4 +1,4 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 dofile_once("data/scripts/gun/procedural/gun_action_utils.lua")
 
 function item_pickup(entity_item, entity_pickupper, item_name)

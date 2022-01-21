@@ -1,11 +1,11 @@
 function do_teleport(entity)
-	dofile_once("mods/AdventureMode/lib/coroutines.lua")
-  dofile_once("mods/AdventureMode/files/util.lua")
-  dofile_once("mods/AdventureMode/files/camera.lua")
+	dofile_once("mods/SpookyMode/lib/coroutines.lua")
+  dofile_once("mods/SpookyMode/files/util.lua")
+  dofile_once("mods/SpookyMode/files/camera.lua")
   dofile_once("data/scripts/lib/utilities.lua")
  
 	-- So it doesn't apply the heatwarping shader effect
-	GlobalsSetValue("AdventureMode_game_complete", "1")
+	GlobalsSetValue("SpookyMode_game_complete", "1")
 
   EntitySetTransform( entity, 270, -85 )
   
@@ -15,11 +15,11 @@ function do_teleport(entity)
 	GameSetCameraFree(true)
   
 	EntityAddComponent2(entity, "LuaComponent", { 
-		script_source_file="mods/AdventureMode/files/move_right.lua",
+		script_source_file="mods/SpookyMode/files/move_right.lua",
 		execute_every_n_frame=1,
 	})
 	EntityAddComponent2(entity, "LuaComponent", { 
-		script_source_file="mods/AdventureMode/files/roll_credits.lua",
+		script_source_file="mods/SpookyMode/files/roll_credits.lua",
 		execute_every_n_frame=1
 	})
 	
@@ -29,7 +29,7 @@ function do_teleport(entity)
 
 		local script_source_file = ComponentGetValue2(lua_comp, "script_source_file")
 
-		if(script_source_file == "mods/AdventureMode/files/music_player.lua")then
+		if(script_source_file == "mods/SpookyMode/files/music_player.lua")then
 			EntityRemoveComponent( world_state, lua_comp )
 		end
 	end

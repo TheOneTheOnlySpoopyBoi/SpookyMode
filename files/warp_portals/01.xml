@@ -1,6 +1,6 @@
 <Entity>
 
-  <Base file="mods/AdventureMode/files/portal_base.xml">
+  <Base file="mods/SpookyMode/files/portal_base.xml">
 
     <TeleportComponent
       target.x="1243"

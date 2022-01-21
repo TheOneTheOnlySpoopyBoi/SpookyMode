@@ -1,7 +1,7 @@
 <Entity>
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/respawn_statue/statue.png"
+    image_file="mods/SpookyMode/files/respawn_statue/statue.png"
     offset_x="13"
     offset_y="43"
     z_index="0.7"
@@ -33,7 +33,7 @@
 		emission_interval_min_frames="2"
 		emission_interval_max_frames="3"
 		emit_cosmetic_particles="1"
-		image_animation_file="mods/AdventureMode/files/respawn_statue/emitter.png"
+		image_animation_file="mods/SpookyMode/files/respawn_statue/emitter.png"
 		image_animation_speed="5"
 		image_animation_loop="1"
 		is_emitting="1"
@@ -64,7 +64,7 @@
 		emission_interval_max_frames="3"
     emission_chance="20"
 		emit_cosmetic_particles="1"
-		image_animation_file="mods/AdventureMode/files/respawn_statue/emitter_eyes.png"
+		image_animation_file="mods/SpookyMode/files/respawn_statue/emitter_eyes.png"
 		image_animation_speed="5"
 		image_animation_loop="1"
 		is_emitting="1"
@@ -87,7 +87,7 @@
     ></CollisionTriggerComponent>
 
     <LuaComponent
-      script_collision_trigger_hit="mods/AdventureMode/files/respawn_statue/trigger_hit.lua"
+      script_collision_trigger_hit="mods/SpookyMode/files/respawn_statue/trigger_hit.lua"
       execute_every_n_frame="-1"
     ></LuaComponent>
 
@@ -100,13 +100,13 @@
   ></InteractableComponent>
 
   <LuaComponent
-    script_interacting="mods/AdventureMode/files/respawn_statue/interact.lua"
+    script_interacting="mods/SpookyMode/files/respawn_statue/interact.lua"
     execute_every_n_frame="-1"
   ></LuaComponent>
 
   <!-- This checks if it it's the currently set save point and if so, enable the emitters to signal that to the player -->
   <LuaComponent
-    script_source_file="mods/AdventureMode/files/respawn_statue/check.lua"
+    script_source_file="mods/SpookyMode/files/respawn_statue/check.lua"
     execute_every_n_frame="30"
   ></LuaComponent>
 

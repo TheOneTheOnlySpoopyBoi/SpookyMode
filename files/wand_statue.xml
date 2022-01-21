@@ -11,13 +11,13 @@
 	></LightComponent>
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/statue_of_woman.png"
+    image_file="mods/SpookyMode/files/statue_of_woman.png"
     offset_x="44"
     offset_y="106"
   ></SpriteComponent>
   
 <!--   <PixelSceneComponent
-    pixel_scene="mods/AdventureMode/files/wand_spawner.png"
+    pixel_scene="mods/SpookyMode/files/wand_spawner.png"
     offset_x="0"
     offset_y="-60"
   ></PixelSceneComponent> -->
@@ -30,31 +30,31 @@
 	</AudioLoopComponent>
 
 	<LuaComponent
-		script_source_file="mods/AdventureMode/files/wand_statue_fx.lua"
+		script_source_file="mods/SpookyMode/files/wand_statue_fx.lua"
 		execute_every_n_frame="1" >
 	</LuaComponent>
 	<Entity tags="cube_fx">
-		<Base file="mods/AdventureMode/files/wand_statue_fx.xml" />
+		<Base file="mods/SpookyMode/files/wand_statue_fx.xml" />
 	</Entity>
 	<Entity tags="cube_fx">
-		<Base file="mods/AdventureMode/files/wand_statue_fx.xml" />
+		<Base file="mods/SpookyMode/files/wand_statue_fx.xml" />
 	</Entity>
 	<Entity tags="cube_fx">
-		<Base file="mods/AdventureMode/files/wand_statue_fx.xml" />
+		<Base file="mods/SpookyMode/files/wand_statue_fx.xml" />
 	</Entity>
 	<Entity tags="cube_fx">
-		<Base file="mods/AdventureMode/files/wand_statue_fx.xml" />
+		<Base file="mods/SpookyMode/files/wand_statue_fx.xml" />
 	</Entity>
 	<Entity tags="cube_fx">
-		<Base file="mods/AdventureMode/files/wand_statue_fx.xml" />
+		<Base file="mods/SpookyMode/files/wand_statue_fx.xml" />
 	</Entity>
 	<Entity tags="cube_fx">
-		<Base file="mods/AdventureMode/files/wand_statue_fx.xml" />
+		<Base file="mods/SpookyMode/files/wand_statue_fx.xml" />
 	</Entity>
 	<Entity tags="cube_fx">
-		<Base file="mods/AdventureMode/files/wand_statue_fx.xml" />
+		<Base file="mods/SpookyMode/files/wand_statue_fx.xml" />
 	</Entity>
 	<Entity tags="cube_fx">
-		<Base file="mods/AdventureMode/files/wand_statue_fx.xml" />
+		<Base file="mods/SpookyMode/files/wand_statue_fx.xml" />
 	</Entity>
 </Entity>

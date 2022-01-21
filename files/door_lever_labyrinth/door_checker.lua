@@ -1,5 +1,5 @@
-dofile_once("mods/AdventureMode/files/util.lua")
-dofile_once("mods/AdventureMode/lib/coroutines.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
+dofile_once("mods/SpookyMode/lib/coroutines.lua")
 
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)
@@ -8,7 +8,7 @@ local state = get_state(entity_id)
 
 local color = get_var_store_string(entity_id, "color", "")
 local default_state = get_var_store_int(entity_id, "default_state", 1)
-local active_state = tonumber(GlobalsGetValue("AdventureMode_leverdoor_puzzle_color_" .. color, "0"))
+local active_state = tonumber(GlobalsGetValue("SpookyMode_leverdoor_puzzle_color_" .. color, "0"))
 local PhysicsBody_comp = EntityGetFirstComponentIncludingDisabled(entity_id, "PhysicsBodyComponent")
 if PhysicsBody_comp then
   local current_state = ComponentGetIsEnabled(PhysicsBody_comp)

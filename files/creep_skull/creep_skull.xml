@@ -43,7 +43,7 @@
 			food_material="blood"
 			attack_ranged_enabled="1"
 			attack_ranged_frames_between="60"
-			attack_ranged_entity_file="mods/AdventureMode/files/creep_skull/orb_creep.xml"
+			attack_ranged_entity_file="mods/SpookyMode/files/creep_skull/orb_creep.xml"
 			attack_ranged_entity_count_min="5"
 			attack_ranged_entity_count_max="5"
 			attack_ranged_action_frame="3"
@@ -103,7 +103,7 @@
 	</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/AdventureMode/files/creep_skull/creep_skull_sprite.xml" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_skull_sprite.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
@@ -211,7 +211,7 @@
 	</HealthBarComponent>
 	
 		<LuaComponent
-		script_death="mods/AdventureMode/files/creep_skull/death_cutscene.lua"
+		script_death="mods/SpookyMode/files/creep_skull/death_cutscene.lua"
 		>
 	</LuaComponent>
 	
@@ -219,7 +219,7 @@
         _tags="character" 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/AdventureMode/files/creep_skull/creep_skull_emissive.xml"
+		image_file="mods/SpookyMode/files/creep_skull/creep_skull_emissive.xml"
 		offset_x="0" 
 		offset_y="0"
 		emissive="1"
@@ -241,7 +241,7 @@
 	</AudioLoopComponent>
 	
 	<LuaComponent
-		script_source_file="mods/AdventureMode/files/creep_skull/reset_health_on_player_death.lua"
+		script_source_file="mods/SpookyMode/files/creep_skull/reset_health_on_player_death.lua"
 		execute_every_n_frame="5"
 	></LuaComponent>
 	
@@ -268,7 +268,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="0" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -280,7 +280,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -292,7 +292,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -304,7 +304,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -316,7 +316,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -328,7 +328,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -340,7 +340,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -352,7 +352,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -364,7 +364,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -376,7 +376,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -388,7 +388,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -400,7 +400,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -412,7 +412,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -424,7 +424,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -436,7 +436,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -448,7 +448,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="29" 
@@ -460,7 +460,7 @@
 		<SpriteComponent 
 			_enabled="1" 
 			alpha="1" 
-			image_file="mods/AdventureMode/files/creep_skull/creep_vertebra_end.png" 
+			image_file="mods/SpookyMode/files/creep_skull/creep_vertebra_end.png" 
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="23" 

@@ -1,6 +1,6 @@
 function toggle_color(color)
-  local color_state = tonumber(GlobalsGetValue("AdventureMode_leverdoor_puzzle_color_" .. color, "0"))
-  GlobalsSetValue("AdventureMode_leverdoor_puzzle_color_" .. color, 1 - color_state)
+  local color_state = tonumber(GlobalsGetValue("SpookyMode_leverdoor_puzzle_color_" .. color, "0"))
+  GlobalsSetValue("SpookyMode_leverdoor_puzzle_color_" .. color, 1 - color_state)
 end
 
 function lever_01_switched()

@@ -16,7 +16,7 @@
 		count_max="1"
 		emission_interval_min_frames="0"
 		emission_interval_max_frames="0"
-		image_animation_file="mods/AdventureMode/files/rising_lava/particle_emitter.png"
+		image_animation_file="mods/SpookyMode/files/rising_lava/particle_emitter.png"
 		image_animation_loop="1"
 		emit_cosmetic_particles="0"
 		create_real_particles="1"
@@ -24,7 +24,7 @@
 	</ParticleEmitterComponent>
 	
 	<LuaComponent
-		script_source_file="mods/AdventureMode/files/rising_lava/lava_rise.lua"
+		script_source_file="mods/SpookyMode/files/rising_lava/lava_rise.lua"
 		execute_every_n_frame="2"
 		>
 	</LuaComponent>

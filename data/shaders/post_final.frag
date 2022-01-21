@@ -234,7 +234,7 @@ void main()
 	vec3 color    = texture2D(tex_bg, tex_coord).rgb;
 	vec4 color_fg = texture2D(tex_fg, tex_coord);
 	
-	// Heat warp (AdventureMode)
+	// Heat warp (SpookyMode)
 	float hw_amount = heat_warp_amount.x;
 	color_fg = mix(color_fg, texture2D(tex_fg, tex_coord + vec2(sin(noise_perlin2.y * 40.0 + time * 6.0) * 0.0015 * hw_amount, 0.0)), 1.0);
 	color = mix(color, texture2D(tex_bg, tex_coord + vec2(sin(noise_perlin2.y * 40.0 + time * 6.0) * 0.0015 * hw_amount, 0.0)).rgb, 1.0);

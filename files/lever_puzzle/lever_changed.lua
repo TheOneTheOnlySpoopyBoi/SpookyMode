@@ -1,9 +1,9 @@
 function lever_changed()
-  local solution = dofile_once("mods/AdventureMode/files/lever_puzzle/solution.lua")
+  local solution = dofile_once("mods/SpookyMode/files/lever_puzzle/solution.lua")
   -- local solution = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }
   local is_solved = true
   for i=1, 10 do
-    local lever_state = tonumber(GlobalsGetValue("AdventureMode_lever_puzzle_lever_" .. i, "0"))
+    local lever_state = tonumber(GlobalsGetValue("SpookyMode_lever_puzzle_lever_" .. i, "0"))
     is_solved = is_solved and (solution[i] == lever_state)
   end
   if is_solved then

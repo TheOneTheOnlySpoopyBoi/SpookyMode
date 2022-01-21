@@ -1,4 +1,4 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)

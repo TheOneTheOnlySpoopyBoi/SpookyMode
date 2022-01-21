@@ -22,22 +22,22 @@
   ></SpriteParticleEmitterComponent>
 
   <PixelSceneComponent
-    pixel_scene="mods/AdventureMode/files/door_cool_materials.png"
-    pixel_scene_visual="mods/AdventureMode/files/door_cool.png"
+    pixel_scene="mods/SpookyMode/files/door_cool_materials.png"
+    pixel_scene_visual="mods/SpookyMode/files/door_cool.png"
     offset_y="0"
     skip_biome_checks="1"
   ></PixelSceneComponent>
 
   <SpriteComponent
     _enabled="0"
-    image_file="mods/AdventureMode/files/door_cool.png"
+    image_file="mods/SpookyMode/files/door_cool.png"
     offset_y="0"
     >
   </SpriteComponent>
 
   <LuaComponent
     _enabled="0"
-    script_source_file="mods/AdventureMode/files/door3.lua"
+    script_source_file="mods/SpookyMode/files/door3.lua"
     execute_every_n_frame="-1"
     execute_on_added="1"
     enable_coroutines="1"
@@ -45,7 +45,7 @@
   </LuaComponent>
 
   <LuaComponent
-    script_source_file="mods/AdventureMode/files/door3_checker.lua"
+    script_source_file="mods/SpookyMode/files/door3_checker.lua"
     execute_every_n_frame="10"
     >
   </LuaComponent>

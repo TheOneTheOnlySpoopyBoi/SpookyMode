@@ -1,5 +1,5 @@
 table.insert(actions, {
-  id = "ADVENTUREMODE_TORCH",
+  id = "SPOOKYMODE_TORCH",
   name = "$action_torch",
   description = "$actiondesc_torch",
   sprite = "data/ui_gfx/gun_actions/torch.png",
@@ -9,7 +9,7 @@ table.insert(actions, {
   spawn_probability = "1,1,1",
   price = 100,
   mana = 0,
-  custom_xml_file = "mods/AdventureMode/files/spells/torch.xml",
+  custom_xml_file = "mods/SpookyMode/files/spells/torch.xml",
   action = function()
     draw_actions(1, true)
   end,

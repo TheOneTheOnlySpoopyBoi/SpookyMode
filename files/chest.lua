@@ -1,4 +1,4 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
 function on_open( entity_item )
 	local x, y = EntityGetTransform( entity_item )

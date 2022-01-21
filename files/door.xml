@@ -22,7 +22,7 @@
   ></SpriteParticleEmitterComponent>
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/temple_door.png"
+    image_file="mods/SpookyMode/files/temple_door.png"
     offset_y="80"
     >
   </SpriteComponent>
@@ -30,7 +30,7 @@
     offset_y="8" -->
 
   <LuaComponent
-    script_source_file="mods/AdventureMode/files/door.lua"
+    script_source_file="mods/SpookyMode/files/door.lua"
     execute_every_n_frame="-1"
     execute_on_added="1"
     enable_coroutines="1"

@@ -263,7 +263,7 @@
   <Base file="data/entities/base_wand_pickup.xml"></Base>
 	
 	<LuaComponent 
-		script_item_picked_up="mods/AdventureMode/files/wand_basic_pickup.lua"
+		script_item_picked_up="mods/SpookyMode/files/wand_basic_pickup.lua"
   ></LuaComponent>
     
 </Entity>

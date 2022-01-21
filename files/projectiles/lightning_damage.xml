@@ -13,7 +13,7 @@
 	
 <!--     <LuaComponent 
 		_enabled="1" 
-		script_source_file="mods/AdventureMode/files/projectiles/lightning.lua" 
+		script_source_file="mods/SpookyMode/files/projectiles/lightning.lua" 
 		execute_every_n_frame="1"
 		>
 	</LuaComponent> -->

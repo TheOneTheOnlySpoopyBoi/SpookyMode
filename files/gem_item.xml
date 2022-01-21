@@ -25,7 +25,7 @@
   <PhysicsImageShapeComponent
     body_id="1"
     centered="1"
-    image_file="mods/AdventureMode/files/gem_in_hand.png"
+    image_file="mods/SpookyMode/files/gem_in_hand.png"
     material="gem_box2d_red"
   ></PhysicsImageShapeComponent>
 
@@ -44,7 +44,7 @@
     _tags="enabled_in_hand"
     offset_x="2"
     offset_y="2"
-    image_file="mods/AdventureMode/files/gem_in_hand.png"
+    image_file="mods/SpookyMode/files/gem_in_hand.png"
   ></SpriteComponent>
 
   <SpriteComponent
@@ -52,14 +52,14 @@
     offset_x="37.5"
     offset_y="37.5"
     fog_of_war_hole="1"
-    image_file="mods/AdventureMode/files/gem_glow.png"
+    image_file="mods/SpookyMode/files/gem_glow.png"
   ></SpriteComponent>
 
   <ItemComponent
     _tags="enabled_in_world"
     item_name="Red Glowing Gemstone"
     ui_description="A red gemstone. It is giving off a bright red light."
-    ui_sprite="mods/AdventureMode/files/gem_big.png"
+    ui_sprite="mods/SpookyMode/files/gem_big.png"
     max_child_items="0"
     is_pickable="1"
     is_equipable_forced="1"

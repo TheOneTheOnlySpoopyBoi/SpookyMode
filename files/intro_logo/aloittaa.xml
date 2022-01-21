@@ -2,7 +2,7 @@
 
 	<SpriteComponent
     _tags="character"
-		image_file="mods/AdventureMode/files/intro_logo/aloittaa_sprite.xml"
+		image_file="mods/SpookyMode/files/intro_logo/aloittaa_sprite.xml"
     offset_x="78" 
     offset_y="28"
     rect_animation="logo"
@@ -10,7 +10,7 @@
 	</SpriteComponent>
 
 	<SpriteComponent
-		image_file="mods/AdventureMode/files/intro_logo/aloittaa_shade.png"
+		image_file="mods/SpookyMode/files/intro_logo/aloittaa_shade.png"
     offset_x="78" 
     offset_y="28"
 		>
@@ -22,8 +22,8 @@
   <!-- <ParticleEmitterComponent
     emitted_material_name="blood_fading"
     emission_chance="30"
-    image_animation_file="mods/AdventureMode/files/intro_logo/aloittaa_particles.png"
-    image_animation_colors_file="mods/AdventureMode/files/intro_logo/aloittaa_colours.png"
+    image_animation_file="mods/SpookyMode/files/intro_logo/aloittaa_particles.png"
+    image_animation_colors_file="mods/SpookyMode/files/intro_logo/aloittaa_colours.png"
     gravity.y="-5.0"
     lifetime_min="0.5"
     lifetime_max="2.5"

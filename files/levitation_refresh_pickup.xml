@@ -8,7 +8,7 @@
     </InheritTransformComponent> -->
 
     <SpriteComponent
-      image_file="mods/AdventureMode/files/levitation_refresh_pickup.png"
+      image_file="mods/SpookyMode/files/levitation_refresh_pickup.png"
       offset_x="7"
       offset_y="7"
     ></SpriteComponent>
@@ -66,8 +66,8 @@
     ></ItemComponent>
 
     <LuaComponent
-      script_source_file="mods/AdventureMode/files/levitation_refresh_pickup.lua"
-      script_item_picked_up="mods/AdventureMode/files/levitation_refresh_pickup.lua"
+      script_source_file="mods/SpookyMode/files/levitation_refresh_pickup.lua"
+      script_item_picked_up="mods/SpookyMode/files/levitation_refresh_pickup.lua"
       execute_every_n_frame="10"
     ></LuaComponent>
 

@@ -7,7 +7,7 @@
   	</CollisionTriggerComponent>
 
     <LuaComponent
-      script_collision_trigger_hit="mods/AdventureMode/files/music_trigger_statue_corridor.lua"
+      script_collision_trigger_hit="mods/SpookyMode/files/music_trigger_statue_corridor.lua"
       execute_every_n_frame="-1" >
     </LuaComponent>
 </Entity>

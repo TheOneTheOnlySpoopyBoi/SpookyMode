@@ -1,6 +1,6 @@
-dofile_once("mods/AdventureMode/lib/coroutines.lua")
-dofile_once("mods/AdventureMode/files/util.lua")
-dofile_once("mods/AdventureMode/files/camera.lua")
+dofile_once("mods/SpookyMode/lib/coroutines.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/camera.lua")
 dofile_once("data/scripts/lib/utilities.lua")
 
 local function get_player_position()
@@ -36,7 +36,7 @@ async(function()
 	
   wait(160)
   
-  local particles = EntityLoad("mods/AdventureMode/files/rebirth_particles.xml", px, py)
+  local particles = EntityLoad("mods/SpookyMode/files/rebirth_particles.xml", px, py)
   
   wait(100)
   
@@ -127,13 +127,13 @@ async(function()
 	
   wait(90)
   
-  GlobalsSetValue("AdventureMode_aim_on_portal", "1")
+  GlobalsSetValue("SpookyMode_aim_on_portal", "1")
   
   for i, finger in ipairs(fingers or {}) do
 	EntitySetComponentsWithTagEnabled( finger, "particles", true )
   end
   
-  EntityLoad("mods/AdventureMode/files/ending_portal.xml", x - 1, y - 92)
+  EntityLoad("mods/SpookyMode/files/ending_portal.xml", x - 1, y - 92)
   
   wait(60)
   

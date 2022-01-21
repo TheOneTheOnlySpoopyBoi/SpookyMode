@@ -23,7 +23,7 @@
   ></MaterialAreaCheckerComponent> -->
 
   <LuaComponent
-	script_material_area_checker_failed="mods/AdventureMode/files/no_corpse_if_in_smoke.lua"
+	script_material_area_checker_failed="mods/SpookyMode/files/no_corpse_if_in_smoke.lua"
     execute_every_n_frame="-1"
   ></LuaComponent>
 

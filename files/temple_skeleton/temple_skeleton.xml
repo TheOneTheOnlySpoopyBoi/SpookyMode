@@ -54,7 +54,7 @@
 			escape_if_damaged_probability="0"
 			food_material="blood"
 			attack_ranged_enabled="1"
-			attack_ranged_entity_file="mods/AdventureMode/files/temple_skeleton/power_orb.xml"
+			attack_ranged_entity_file="mods/SpookyMode/files/temple_skeleton/power_orb.xml"
 			attack_ranged_frames_between="60"
 			attack_ranged_action_frame="4"
 			attack_ranged_min_distance="30" 
@@ -103,7 +103,7 @@
 	</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/AdventureMode/files/temple_skeleton/temple_skeleton_sprite.xml" 
+			image_file="mods/SpookyMode/files/temple_skeleton/temple_skeleton_sprite.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
@@ -169,7 +169,7 @@
         _tags="character" 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/AdventureMode/files/temple_skeleton/temple_skeleton_emissive.xml"
+		image_file="mods/SpookyMode/files/temple_skeleton/temple_skeleton_emissive.xml"
 		offset_x="0" 
 		offset_y="0"
 		emissive="1"
@@ -180,20 +180,20 @@
 	</SpriteComponent>
 	
 	<LuaComponent
-		script_source_file="mods/AdventureMode/files/temple_skeleton/follow_player_ai.lua"
+		script_source_file="mods/SpookyMode/files/temple_skeleton/follow_player_ai.lua"
 		execute_every_n_frame="1"
 	></LuaComponent>
 
 	<LuaComponent
-		script_source_file="mods/AdventureMode/files/temple_skeleton/despawn_on_player_death.lua"
+		script_source_file="mods/SpookyMode/files/temple_skeleton/despawn_on_player_death.lua"
 		execute_every_n_frame="5"
 	></LuaComponent>
 	
-	<Entity>  <Base file="mods/AdventureMode/files/temple_skeleton/temple_skeleton_leg.xml" /> </Entity>
-	<Entity>  <Base file="mods/AdventureMode/files/temple_skeleton/temple_skeleton_leg.xml" /> </Entity>
-	<Entity>  <Base file="mods/AdventureMode/files/temple_skeleton/temple_skeleton_leg.xml" /> </Entity>
-	<Entity>  <Base file="mods/AdventureMode/files/temple_skeleton/temple_skeleton_leg.xml" /> </Entity>
-	<Entity>  <Base file="mods/AdventureMode/files/temple_skeleton/temple_skeleton_leg.xml" /> </Entity>
+	<Entity>  <Base file="mods/SpookyMode/files/temple_skeleton/temple_skeleton_leg.xml" /> </Entity>
+	<Entity>  <Base file="mods/SpookyMode/files/temple_skeleton/temple_skeleton_leg.xml" /> </Entity>
+	<Entity>  <Base file="mods/SpookyMode/files/temple_skeleton/temple_skeleton_leg.xml" /> </Entity>
+	<Entity>  <Base file="mods/SpookyMode/files/temple_skeleton/temple_skeleton_leg.xml" /> </Entity>
+	<Entity>  <Base file="mods/SpookyMode/files/temple_skeleton/temple_skeleton_leg.xml" /> </Entity>
 	
 	<AudioComponent 
 		file="data/audio/Desktop/animals.bank"

@@ -1,7 +1,7 @@
 <Entity tags="mortal,prey" name="Camel">
   
 	<DamageModelComponent 
-		ragdoll_filenames_file="mods/AdventureMode/files/ragdolls/camel/filenames.txt"
+		ragdoll_filenames_file="mods/SpookyMode/files/ragdolls/camel/filenames.txt"
 		fire_probability_of_ignition="0.05"
 		ragdoll_offset_x="6"
 		ragdoll_offset_y="-12"
@@ -11,7 +11,7 @@
 
 	<SpriteComponent 
 		_tags="character"
-		image_file="mods/AdventureMode/files/camel_sprite.xml"
+		image_file="mods/SpookyMode/files/camel_sprite.xml"
 		next_rect_animation="" 
 		offset_x="0" 
 		offset_y="0" 

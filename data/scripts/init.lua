@@ -1,4 +1,4 @@
-dofile_once("mods/AdventureMode/lib/coroutines.lua")
+dofile_once("mods/SpookyMode/lib/coroutines.lua")
 
 function OnWorldPreUpdate()
 	wake_up_waiting_threads(1)

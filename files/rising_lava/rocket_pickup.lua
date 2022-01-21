@@ -1,5 +1,5 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
 function item_pickup(entity_item, entity_pickupper, item_name)
-  GlobalsSetValue("AdventureMode_rising_lava_beaten", "1")
+  GlobalsSetValue("SpookyMode_rising_lava_beaten", "1")
 end

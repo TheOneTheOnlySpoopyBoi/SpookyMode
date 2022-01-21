@@ -1,4 +1,4 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
 RegisterSpawnFunction(0xffc626dc, "spawn_cactus")
 RegisterSpawnFunction(0xffbba86b, "spawn_door")
@@ -132,24 +132,24 @@ end
 local i = 0
 function spawn_cactus(x, y)
   i = (i % 4) + 1
-  EntityLoad("mods/AdventureMode/files/props/cactus"..i..".xml", x, y)
+  EntityLoad("mods/SpookyMode/files/props/cactus"..i..".xml", x, y)
 end
 
 function spawn_door(x, y)
-  if GlobalsGetValue("AdventureMode_DEBUG_starting_position", "1") == "1" then
-    EntityLoad("mods/AdventureMode/files/door.xml", x, y)
+  if GlobalsGetValue("SpookyMode_DEBUG_starting_position", "1") == "1" then
+    EntityLoad("mods/SpookyMode/files/door.xml", x, y)
   end
 end
 
 function spawn_door2(x, y)
-  if GlobalsGetValue("AdventureMode_DEBUG_starting_position", "1") == "1" then
-    EntityLoad("mods/AdventureMode/files/door2.xml", x, y)
+  if GlobalsGetValue("SpookyMode_DEBUG_starting_position", "1") == "1" then
+    EntityLoad("mods/SpookyMode/files/door2.xml", x, y)
   end
 end
 
 function spawn_door3(x, y)
-  if GlobalsGetValue("AdventureMode_DEBUG_starting_position", "1") == "1" then
-    EntityLoad("mods/AdventureMode/files/door3.xml", x, y)
+  if GlobalsGetValue("SpookyMode_DEBUG_starting_position", "1") == "1" then
+    EntityLoad("mods/SpookyMode/files/door3.xml", x, y)
   end
 end
 
@@ -157,7 +157,7 @@ for i=1, 15 do
   local num_string = string.format("%.2d", i)
   RegisterSpawnFunction(0xff426870 + i, "spawn_vanishing_block_" .. num_string)
   _G["spawn_vanishing_block_" .. num_string] = function(x, y)
-    EntityLoad("mods/AdventureMode/files/vanishing_block_" .. num_string .. ".xml", x, y)
+    EntityLoad("mods/SpookyMode/files/vanishing_block_" .. num_string .. ".xml", x, y)
   end
 end
 
@@ -166,17 +166,17 @@ function spawn_heart_fullhp(x, y)
 end
 
 function spawn_liquid_checker(x, y)
-  EntityLoad("mods/AdventureMode/files/liquid_checker.xml", x, y)
-  -- EntityLoad("mods/AdventureMode/files/platform.xml", x + 70, y - 10)
-  -- EntityLoad("mods/AdventureMode/files/platform.xml", x + 70, y - 20)
-  -- EntityLoad("mods/AdventureMode/files/platform.xml", x + 70, y - 30)
-  -- EntityLoad("mods/AdventureMode/files/platform.xml", x + 70, y - 40)
-  -- EntityLoad("mods/AdventureMode/files/platform.xml", x + 70, y - 50)
-  -- EntityLoad("mods/AdventureMode/files/platform.xml", x + 70, y - 60)
+  EntityLoad("mods/SpookyMode/files/liquid_checker.xml", x, y)
+  -- EntityLoad("mods/SpookyMode/files/platform.xml", x + 70, y - 10)
+  -- EntityLoad("mods/SpookyMode/files/platform.xml", x + 70, y - 20)
+  -- EntityLoad("mods/SpookyMode/files/platform.xml", x + 70, y - 30)
+  -- EntityLoad("mods/SpookyMode/files/platform.xml", x + 70, y - 40)
+  -- EntityLoad("mods/SpookyMode/files/platform.xml", x + 70, y - 50)
+  -- EntityLoad("mods/SpookyMode/files/platform.xml", x + 70, y - 60)
 end
 
 function spawn_pickup_jetpack(x, y)
-  EntityLoad("mods/AdventureMode/files/pickups/jetpack.xml", x, y - 10)
+  EntityLoad("mods/SpookyMode/files/pickups/jetpack.xml", x, y - 10)
 end
 
 function spawn_electricity_trap(x, y)
@@ -186,7 +186,7 @@ end
 local pressure_plates_spawned = 0
 function spawn_pressure_plate(x, y)
   pressure_plates_spawned = pressure_plates_spawned + 1
-  EntityLoad("mods/AdventureMode/files/pressure_plate.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/pressure_plate.xml", x, y)
   if pressure_plates_spawned == 5 then
     local pressure_plates = EntityGetWithTag("pressure_plate")
     local indices = {
@@ -208,18 +208,18 @@ function spawn_pressure_plate(x, y)
 end
 
 function spawn_puzzle_torch(x, y)
-  local puzzle_torches_spawned = tonumber(GlobalsGetValue("AdventureMode_puzzle_torches_spawned", "0"))
+  local puzzle_torches_spawned = tonumber(GlobalsGetValue("SpookyMode_puzzle_torches_spawned", "0"))
   if puzzle_torches_spawned == 0 then
-    EntityLoad("mods/AdventureMode/files/puzzle_torch_spawner.xml", x, y)
+    EntityLoad("mods/SpookyMode/files/puzzle_torch_spawner.xml", x, y)
   end
   puzzle_torches_spawned = puzzle_torches_spawned + 1
-  GlobalsSetValue("AdventureMode_puzzle_torches_spawned", puzzle_torches_spawned)
-  GlobalsSetValue("AdventureMode_puzzle_torch_pos_x_" .. puzzle_torches_spawned, x)
-  GlobalsSetValue("AdventureMode_puzzle_torch_pos_y_" .. puzzle_torches_spawned, y)
+  GlobalsSetValue("SpookyMode_puzzle_torches_spawned", puzzle_torches_spawned)
+  GlobalsSetValue("SpookyMode_puzzle_torch_pos_x_" .. puzzle_torches_spawned, x)
+  GlobalsSetValue("SpookyMode_puzzle_torch_pos_y_" .. puzzle_torches_spawned, y)
 end
 
 function spawn_flamethrower_turret(x, y)
-  EntityLoad("mods/AdventureMode/files/flamethrower.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/flamethrower.xml", x, y)
 end
 
 function spawn_chain_torch(x, y)
@@ -228,74 +228,74 @@ function spawn_chain_torch(x, y)
 end
 
 function spawn_slab_01(x, y)
-  EntityLoad("mods/AdventureMode/files/slabs/slab.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/slabs/slab.xml", x, y)
 end
 
 function spawn_slab_02(x, y)
-  EntityLoad("mods/AdventureMode/files/slabs/slab_2.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/slabs/slab_2.xml", x, y)
 end
 
 function spawn_sign(x, y)
-  EntityLoad("mods/AdventureMode/files/sign.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/sign.xml", x, y)
 end
 
 function spawn_pile_of_bones(x, y)
-  EntityLoad("mods/AdventureMode/files/skeletons/pile_of_bones.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/skeletons/pile_of_bones.xml", x, y)
 end
 
 function spawn_spike_corridor(x, y)
-  EntityLoad("mods/AdventureMode/files/spike_corridor.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/spike_corridor.xml", x, y)
 end
 
 function spawn_spike_corridor_skeleton_01(x, y)
-  EntityLoad("mods/AdventureMode/files/skeletons/spike_corridor_01.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/skeletons/spike_corridor_01.xml", x, y)
 end
 
 function spawn_spike_corridor_skeleton_02(x, y)
-  EntityLoad("mods/AdventureMode/files/skeletons/spike_corridor_02.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/skeletons/spike_corridor_02.xml", x, y)
 end
 
 function spawn_maze_skeleton_01(x, y)
-  EntityLoad("mods/AdventureMode/files/skeletons/maze_01.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/skeletons/maze_01.xml", x, y)
 end
 
 function spawn_gas_cave_skeleton_01(x, y)
-  EntityLoad("mods/AdventureMode/files/skeletons/gas_cave.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/skeletons/gas_cave.xml", x, y)
 end
 
 function spawn_gas_cave_skeleton_02(x, y)
-  EntityLoad("mods/AdventureMode/files/skeletons/gas_cave_02.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/skeletons/gas_cave_02.xml", x, y)
 end
 
 function spawn_golem_sleeping(x, y)
-  EntityLoad("mods/AdventureMode/files/golem/sleeping.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/golem/sleeping.xml", x, y)
 end
 
-local lever_puzzle_solution = dofile_once("mods/AdventureMode/files/lever_puzzle/solution.lua")
+local lever_puzzle_solution = dofile_once("mods/SpookyMode/files/lever_puzzle/solution.lua")
 for i=1,10 do
   local num_string = string.format("%.2d", i)
   _G["spawn_lever_puzzle_statue_" .. num_string] = function(x, y)
     local direction = lever_puzzle_solution[i] == 1 and "right" or "left"
-    EntityLoad("mods/AdventureMode/files/lever_puzzle/statue_pointing_" .. direction .. ".xml", x, y)
+    EntityLoad("mods/SpookyMode/files/lever_puzzle/statue_pointing_" .. direction .. ".xml", x, y)
   end
   _G["spawn_lever_puzzle_lever_" .. num_string] = function(x, y)
-    EntityLoad("mods/AdventureMode/files/lever_puzzle/lever_" .. num_string .. ".xml", x, y)
+    EntityLoad("mods/SpookyMode/files/lever_puzzle/lever_" .. num_string .. ".xml", x, y)
   end
 end
 
 function spawn_lever_puzzle_reward(x, y)
-  EntityLoad("mods/AdventureMode/files/lever_puzzle/reward.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/lever_puzzle/reward.xml", x, y)
 end
 
 function spawn_brazier(x, y)
-  EntityLoad("mods/AdventureMode/files/brazier.xml", x, y - 12)
+  EntityLoad("mods/SpookyMode/files/brazier.xml", x, y - 12)
 end
 
 function spawn_wall_trap_shooting_left(x, y)
-  local shooter = EntityLoad("mods/AdventureMode/files/wall_trap_shooter.xml", x + 1, y)
+  local shooter = EntityLoad("mods/SpookyMode/files/wall_trap_shooter.xml", x + 1, y)
   EntityAddComponent2(shooter, "PixelSceneComponent", {
-    pixel_scene="mods/AdventureMode/files/spitter_face_left.png",
-    pixel_scene_visual="mods/AdventureMode/files/spitter_face_left_visual.png",
+    pixel_scene="mods/SpookyMode/files/spitter_face_left.png",
+    pixel_scene_visual="mods/SpookyMode/files/spitter_face_left_visual.png",
     offset_x=-11,
     offset_y=-14,
   })
@@ -303,68 +303,68 @@ function spawn_wall_trap_shooting_left(x, y)
 end
 
 function spawn_wall_trap_shooting_right(x, y)
-  local shooter = EntityLoad("mods/AdventureMode/files/wall_trap_shooter.xml", x, y)
+  local shooter = EntityLoad("mods/SpookyMode/files/wall_trap_shooter.xml", x, y)
   EntityAddComponent2(shooter, "PixelSceneComponent", {
-    pixel_scene="mods/AdventureMode/files/spitter_face_right.png",
-    pixel_scene_visual="mods/AdventureMode/files/spitter_face_right_visual.png",
+    pixel_scene="mods/SpookyMode/files/spitter_face_right.png",
+    pixel_scene_visual="mods/SpookyMode/files/spitter_face_right_visual.png",
     offset_x=0,
     offset_y=-14,
   })
 end
 
 function spawn_spike_ground(x, y)
-  EntityLoad("mods/AdventureMode/files/spike.xml", x + 1, y + 1)
+  EntityLoad("mods/SpookyMode/files/spike.xml", x + 1, y + 1)
 end
 
 function spawn_spike_ceiling(x, y)
-  EntityLoad("mods/AdventureMode/files/spike_ceil.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/spike_ceil.xml", x, y)
 end
 
 function spawn_temple_skeleton_spawner(x, y)
-  -- EntityLoad("mods/AdventureMode/files/chaser.xml", x, y)
-  EntityLoad("mods/AdventureMode/files/temple_skeleton_spawner.xml", x, y)
+  -- EntityLoad("mods/SpookyMode/files/chaser.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/temple_skeleton_spawner.xml", x, y)
 end
 
 function spawn_temple_skeleton(x, y)
-  -- EntityLoad("mods/AdventureMode/files/chaser.xml", x, y)
-  GlobalsSetValue("AdventureMode_temple_skeleton_spawn_x", x)
-  GlobalsSetValue("AdventureMode_temple_skeleton_spawn_y", y)
+  -- EntityLoad("mods/SpookyMode/files/chaser.xml", x, y)
+  GlobalsSetValue("SpookyMode_temple_skeleton_spawn_x", x)
+  GlobalsSetValue("SpookyMode_temple_skeleton_spawn_y", y)
 end
 
 function spawn_temple_skeleton_kill_trigger(x, y)
-  EntityLoad("mods/AdventureMode/files/temple_skeleton_kill_trigger.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/temple_skeleton_kill_trigger.xml", x, y)
 end
 
 function spawn_respawn_point_save_trigger(x, y)
-  EntityLoad("mods/AdventureMode/files/save_trigger_area.xml", x, y - 20)
+  EntityLoad("mods/SpookyMode/files/save_trigger_area.xml", x, y - 20)
 end
 
 function spawn_respawn_statue(x, y)
-  EntityLoad("mods/AdventureMode/files/respawn_statue/statue.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/respawn_statue/statue.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_lever_01(x, y)
-  EntityLoad("mods/AdventureMode/files/door_lever_labyrinth/lever_01.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/door_lever_labyrinth/lever_01.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_lever_02(x, y)
-  EntityLoad("mods/AdventureMode/files/door_lever_labyrinth/lever_02.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/door_lever_labyrinth/lever_02.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_lever_03(x, y)
-  EntityLoad("mods/AdventureMode/files/door_lever_labyrinth/lever_03.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/door_lever_labyrinth/lever_03.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_lever_04(x, y)
-  EntityLoad("mods/AdventureMode/files/door_lever_labyrinth/lever_04.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/door_lever_labyrinth/lever_04.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_lever_05(x, y)
-  EntityLoad("mods/AdventureMode/files/door_lever_labyrinth/lever_05.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/door_lever_labyrinth/lever_05.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_lever_06(x, y)
-  EntityLoad("mods/AdventureMode/files/door_lever_labyrinth/lever_06.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/door_lever_labyrinth/lever_06.xml", x, y)
 end
 
 local function load_and_offset_door(file, x, y)
@@ -378,145 +378,145 @@ local function load_and_offset_door(file, x, y)
 end
 
 function spawn_leverdoor_puzzle_door_01(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_01.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_01.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_02(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_02.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_02.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_03(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_03.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_03.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_04(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_04.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_04.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_05(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_05.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_05.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_06(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_06.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_06.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_07(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_07.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_07.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_08(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_08.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_08.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_09(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_09.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_09.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_10(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_10.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_10.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_11(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_11.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_11.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_12(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_12.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_12.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_13(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_13.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_13.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_14(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_14.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_14.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_15(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_15.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_15.xml", x, y)
 end
 
 function spawn_leverdoor_puzzle_door_16(x, y)
-  load_and_offset_door("mods/AdventureMode/files/door_lever_labyrinth/laserdoor_16.xml", x, y)
+  load_and_offset_door("mods/SpookyMode/files/door_lever_labyrinth/laserdoor_16.xml", x, y)
 end
 
 function spawn_tractor_beam_150(x, y)
-  EntityLoad("mods/AdventureMode/files/tractor_beam_150.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/tractor_beam_150.xml", x, y)
 end
 
 function spawn_warp_portal_01(x, y)
-  EntityLoad("mods/AdventureMode/files/warp_portals/01_spawner.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/warp_portals/01_spawner.xml", x, y)
 end
 
 function spawn_warp_portal_01_target(x, y)
-  EntityLoad("mods/AdventureMode/files/warp_portals/01_target_spawner.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/warp_portals/01_target_spawner.xml", x, y)
 end
 
 function spawn_warp_portal_02(x, y)
-  EntityLoad("mods/AdventureMode/files/warp_portals/02_spawner.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/warp_portals/02_spawner.xml", x, y)
 end
 
 function spawn_warp_portal_02_target(x, y)
-  EntityLoad("mods/AdventureMode/files/warp_portals/02_target_spawner.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/warp_portals/02_target_spawner.xml", x, y)
 end
 
 function spawn_portal_activator_02(x, y)
-  EntityLoad("mods/AdventureMode/files/warp_portals/02_activation_trigger.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/warp_portals/02_activation_trigger.xml", x, y)
 end
 
 function spawn_portal_activator_03(x, y)
-  EntityLoad("mods/AdventureMode/files/warp_portals/03_activation_trigger.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/warp_portals/03_activation_trigger.xml", x, y)
 end
 
 function spawn_warp_portal_03(x, y)
-  EntityLoad("mods/AdventureMode/files/warp_portals/03_spawner.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/warp_portals/03_spawner.xml", x, y)
 end
 
 function spawn_warp_portal_03_target(x, y)
-  EntityLoad("mods/AdventureMode/files/warp_portals/03_target_spawner.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/warp_portals/03_target_spawner.xml", x, y)
 end
 
 function spawn_warp_portal_04(x, y)
-  -- EntityLoad("mods/AdventureMode/files/warp_portal_04.xml", x, y)
+  -- EntityLoad("mods/SpookyMode/files/warp_portal_04.xml", x, y)
 end
 
 function spawn_warp_portal_05(x, y)
-  -- EntityLoad("mods/AdventureMode/files/warp_portal_05.xml", x, y)
+  -- EntityLoad("mods/SpookyMode/files/warp_portal_05.xml", x, y)
 end
 
 function spawn_warp_portal_06(x, y)
-  -- EntityLoad("mods/AdventureMode/files/warp_portal_06.xml", x, y)
+  -- EntityLoad("mods/SpookyMode/files/warp_portal_06.xml", x, y)
 end
 
 function spawn_hand_holding_gem(x, y)
-  EntityLoad("mods/AdventureMode/files/slabs/slab_gem_hand.xml", x + 60, y)
-  EntityLoad("mods/AdventureMode/files/hand_holding_gem.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/slabs/slab_gem_hand.xml", x + 60, y)
+  EntityLoad("mods/SpookyMode/files/hand_holding_gem.xml", x, y)
 end
 
 function spawn_gem(x, y)
-  EntityLoad("mods/AdventureMode/files/gem.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/gem.xml", x, y)
 end
 
 function spawn_levitation_refresh_pickup(x, y)
-  EntityLoad("mods/AdventureMode/files/levitation_refresh_pickup.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/levitation_refresh_pickup.xml", x, y)
 end
 
 function spawn_wall_corridor(x, y)
-  EntityLoad("mods/AdventureMode/files/wall_corridor.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/wall_corridor.xml", x, y)
 end
 
 function floating_box_spawner(x, y)
-  EntityLoad("mods/AdventureMode/files/floating_box_spawner.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/floating_box_spawner.xml", x, y)
 end
 
 function spawn_pickup_jetpack2(x, y)
-  EntityLoad("mods/AdventureMode/files/pickups/jetpack2.xml", x, y - 10)
+  EntityLoad("mods/SpookyMode/files/pickups/jetpack2.xml", x, y - 10)
 end
 
 function spawn_wand_statue(x, y)
-  EntityLoad("mods/AdventureMode/files/wand_statue.xml", x, y - 10)
-  EntityLoad("mods/AdventureMode/files/pickups/wand_basic.xml", x + 3, y - 60)
+  EntityLoad("mods/SpookyMode/files/wand_statue.xml", x, y - 10)
+  EntityLoad("mods/SpookyMode/files/pickups/wand_basic.xml", x + 3, y - 60)
 end
 
 function spawn_bullet(x, y)
@@ -629,7 +629,7 @@ function shop_spell( x, y, card_id, cost, is_lava_stopper, is_stealable )
 		} )
 	if is_lava_stopper == 1 then
 		EntityAddComponent( eid, "LuaComponent", { 
-			script_item_picked_up="mods/AdventureMode/files/rising_lava/rocket_pickup.lua",
+			script_item_picked_up="mods/SpookyMode/files/rising_lava/rocket_pickup.lua",
 		} )
 	end
 end
@@ -647,44 +647,44 @@ function spawn_bullet_heavy(x, y)
 end
 
 function spawn_tesla_coil(x, y)
-  EntityLoad("mods/AdventureMode/files/tesla_coil.xml", x, y - 10)
+  EntityLoad("mods/SpookyMode/files/tesla_coil.xml", x, y - 10)
 end
 
 function spawn_zombies(x, y)
 	for i=1,6 do
-	  EntityLoad("mods/AdventureMode/files/zombie.xml", x, y)
+	  EntityLoad("mods/SpookyMode/files/zombie.xml", x, y)
 	end
 end
 
 function spawn_monks(x, y)
   for i=1,3 do
-    EntityLoad("mods/AdventureMode/files/monk.xml", x, y)
+    EntityLoad("mods/SpookyMode/files/monk.xml", x, y)
   end
 end
 
 function spawn_wand_boost(x, y)
-  EntityLoad("mods/AdventureMode/files/pickups/wand_boost.xml", x, y - 10)
+  EntityLoad("mods/SpookyMode/files/pickups/wand_boost.xml", x, y - 10)
 end
 
 function spawn_phantoms(x, y)
   for i=1,3 do
-    EntityLoad("mods/AdventureMode/files/phantom_a.xml", x, y)
+    EntityLoad("mods/SpookyMode/files/phantom_a.xml", x, y)
   end
   for i=1,2 do
-    EntityLoad("mods/AdventureMode/files/phantom_b.xml", x, y)
+    EntityLoad("mods/SpookyMode/files/phantom_b.xml", x, y)
   end
 end
 
 function spawn_alchemists(x, y)
   for i=1,3 do
-    EntityLoad("mods/AdventureMode/files/failed_alchemist.xml", x, y)
+    EntityLoad("mods/SpookyMode/files/failed_alchemist.xml", x, y)
   end
   for i=1,2 do
-    EntityLoad("mods/AdventureMode/files/failed_alchemist_b.xml", x, y)
+    EntityLoad("mods/SpookyMode/files/failed_alchemist_b.xml", x, y)
   end
-  EntityLoad("mods/AdventureMode/files/enlightened_alchemist.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/enlightened_alchemist.xml", x, y)
   for i=1,6 do
-    EntityLoad("mods/AdventureMode/files/skullrat.xml", x, y)
+    EntityLoad("mods/SpookyMode/files/skullrat.xml", x, y)
   end
 end
 
@@ -694,7 +694,7 @@ function spawn_breathless_perk(x, y)
 end
 
 function spawn_rising_lava_trigger(x, y)
-  EntityLoad("mods/AdventureMode/files/rising_lava/rising_lava_trigger.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/rising_lava/rising_lava_trigger.xml", x, y)
 end
 
 function spawn_rocket(x, y)
@@ -702,43 +702,43 @@ function spawn_rocket(x, y)
 end
 
 function alligator_spawner(x, y)
-  EntityLoad("mods/AdventureMode/files/alligator_spawner.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/alligator_spawner.xml", x, y)
 end
 
 function spawn_alligator1(x, y)
-  -- EntityLoad("mods/AdventureMode/files/chaser.xml", x, y)
-  GlobalsSetValue("AdventureMode_alligator_spawn_x", x)
-  GlobalsSetValue("AdventureMode_alligator_spawn_y", y)
+  -- EntityLoad("mods/SpookyMode/files/chaser.xml", x, y)
+  GlobalsSetValue("SpookyMode_alligator_spawn_x", x)
+  GlobalsSetValue("SpookyMode_alligator_spawn_y", y)
 end
 
 function spawn_alligator2(x, y)
-  -- EntityLoad("mods/AdventureMode/files/chaser.xml", x, y)
-  GlobalsSetValue("AdventureMode_alligator_spawn_x2", x)
-  GlobalsSetValue("AdventureMode_alligator_spawn_y2", y)
+  -- EntityLoad("mods/SpookyMode/files/chaser.xml", x, y)
+  GlobalsSetValue("SpookyMode_alligator_spawn_x2", x)
+  GlobalsSetValue("SpookyMode_alligator_spawn_y2", y)
 end
 
 function spawn_alligator_chase_stop_trigger(x, y)
-  EntityLoad("mods/AdventureMode/files/alligator_chase_stop_trigger.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/alligator_chase_stop_trigger.xml", x, y)
 end
 
 function spawn_rebirth_door(x, y)
-  EntityLoad("mods/AdventureMode/files/rebirth_door.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/rebirth_door.xml", x, y)
 end
 
 function spawn_creep_skull(x, y)
-  EntityLoad("mods/AdventureMode/files/creep_skull/creep_skull.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/creep_skull/creep_skull.xml", x, y)
 end
 
 function spawn_rebirth_trigger(x, y)
-  EntityLoad("mods/AdventureMode/files/rebirth_trigger.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/rebirth_trigger.xml", x, y)
 end
 
 function spawn_rebirth_finger(x, y)
-  EntityLoad("mods/AdventureMode/files/rebirth_finger.xml", x, y)
+  EntityLoad("mods/SpookyMode/files/rebirth_finger.xml", x, y)
 end
 
 function spawn_music_trigger_spike( x, y )
-	EntityLoad( "mods/AdventureMode/files/music_trigger_spikes.xml", x, y )
+	EntityLoad( "mods/SpookyMode/files/music_trigger_spikes.xml", x, y )
 end
 
 -- Regex to comment out function body:

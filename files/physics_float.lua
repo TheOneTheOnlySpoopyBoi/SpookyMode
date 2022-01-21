@@ -77,14 +77,14 @@ if corners_in_water > 3 then
 end
 
 --Check stuff to kill the entity if necessary
-if GlobalsGetValue("AdventureMode_respawn_in_progress", "0") == "1" then
+if GlobalsGetValue("SpookyMode_respawn_in_progress", "0") == "1" then
 
 	local entity_id = GetUpdatedEntityID()
-	GlobalsSetValue("AdventureMode_poison_challenge_in_progress", "0")
+	GlobalsSetValue("SpookyMode_poison_challenge_in_progress", "0")
 	
 	EntityAddComponent( entity_id, "LuaComponent", 
 	{ 
-		script_source_file="mods/AdventureMode/files/alligator/kill_on_timer.lua",
+		script_source_file="mods/SpookyMode/files/alligator/kill_on_timer.lua",
 		execute_every_n_frame = "240"
 	} )
 end

@@ -1,7 +1,7 @@
 <Biome>
   <Topology 
     name="_EMPTY_"
-    lua_script="mods/AdventureMode/files/biomes/golem_room.lua"
+    lua_script="mods/SpookyMode/files/biomes/golem_room.lua"
     >
   </Topology>
   <Materials 

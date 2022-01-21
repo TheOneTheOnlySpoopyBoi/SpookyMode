@@ -1,4 +1,4 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)
@@ -21,26 +21,26 @@ end
 
 spikes = spikes or {
   
-  make_spike(0, UP, 60, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(0, DOWN, 215, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(12, UP, 215, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(0, DOWN, 60, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(12, UP, 35, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(0, DOWN, 190, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(12, UP, 190, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(0, DOWN, 35, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(12, UP, 10, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(0, DOWN, 165, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(12, UP, 165, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(0, DOWN, 10, 80, 80, "mods/AdventureMode/files/lua_wall.xml"),
+  make_spike(0, UP, 60, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(0, DOWN, 215, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(12, UP, 215, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(0, DOWN, 60, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(12, UP, 35, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(0, DOWN, 190, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(12, UP, 190, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(0, DOWN, 35, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(12, UP, 10, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(0, DOWN, 165, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(12, UP, 165, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(0, DOWN, 10, 80, 80, "mods/SpookyMode/files/lua_wall.xml"),
 
-  make_spike(54, DOWN, 0, 25, 25, "mods/AdventureMode/files/lua_wall_thick.xml"),
-  make_spike(54, UP, 0, 25, 25, "mods/AdventureMode/files/lua_wall_thick.xml"),
+  make_spike(54, DOWN, 0, 25, 25, "mods/SpookyMode/files/lua_wall_thick.xml"),
+  make_spike(54, UP, 0, 25, 25, "mods/SpookyMode/files/lua_wall_thick.xml"),
   
-  make_spike(34, UP, 0, 20, 20, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(12, DOWN, 100, 20, 20, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(12, UP, 0, 20, 20, "mods/AdventureMode/files/lua_wall.xml"),
-  make_spike(12, DOWN, 100, 20, 20, "mods/AdventureMode/files/lua_wall.xml"),
+  make_spike(34, UP, 0, 20, 20, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(12, DOWN, 100, 20, 20, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(12, UP, 0, 20, 20, "mods/SpookyMode/files/lua_wall.xml"),
+  make_spike(12, DOWN, 100, 20, 20, "mods/SpookyMode/files/lua_wall.xml"),
 }
 
 if spikes[1].entity_id then

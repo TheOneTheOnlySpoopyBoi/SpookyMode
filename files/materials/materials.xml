@@ -37,7 +37,7 @@
 	ui_name="Brittle Gravel"
 	wang_color="ff006c83">
   	<Graphics
-	texture_file="mods/AdventureMode/files/materials/templebrick_broken.png"
+	texture_file="mods/SpookyMode/files/materials/templebrick_broken.png"
 	color="ffAAF06E" >
     </Graphics>
   </CellDataChild>

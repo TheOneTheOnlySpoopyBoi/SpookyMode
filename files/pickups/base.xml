@@ -2,7 +2,7 @@
 
   <SpriteComponent
     _tags="enabled_in_world"
-    image_file="mods/AdventureMode/files/pickups/jetpack.png"
+    image_file="mods/SpookyMode/files/pickups/jetpack.png"
     offset_x="7"
     offset_y="4"
     >
@@ -88,7 +88,7 @@
 	</AudioLoopComponent>
 	
 	<LuaComponent 
-		script_item_picked_up="mods/AdventureMode/files/pickups/jetpack_pickup.lua"
+		script_item_picked_up="mods/SpookyMode/files/pickups/jetpack_pickup.lua"
   ></LuaComponent>
 
 </Entity>

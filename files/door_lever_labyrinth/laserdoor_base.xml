@@ -1,7 +1,7 @@
 <Entity>
 
 	<LuaComponent
-		script_source_file="mods/AdventureMode/files/door_lever_labyrinth/door_checker.lua"
+		script_source_file="mods/SpookyMode/files/door_lever_labyrinth/door_checker.lua"
 		execute_every_n_frame="3"
 		execute_on_added="1"
 		enable_coroutines="1"
@@ -36,14 +36,14 @@
   ></PhysicsBodyComponent>
 
   <PhysicsImageShapeComponent
-    image_file="mods/AdventureMode/files/door_lever_labyrinth/door_body_invis_v.png"
+    image_file="mods/SpookyMode/files/door_lever_labyrinth/door_body_invis_v.png"
     material="door_material"
 		use_sprite="0"
 		offset_x="4"
   ></PhysicsImageShapeComponent>
 
 	<SpriteComponent
-		image_file="mods/AdventureMode/files/door_lever_labyrinth/door_v.png"
+		image_file="mods/SpookyMode/files/door_lever_labyrinth/door_v.png"
 		offset_x="4"
 		offset_y="1"
 	></SpriteComponent>

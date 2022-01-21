@@ -85,7 +85,7 @@
 
     <SpriteComponent 
         alpha="1" 
-        image_file="mods/AdventureMode/files/alligator/alligator_temple_head.xml" 
+        image_file="mods/SpookyMode/files/alligator/alligator_temple_head.xml" 
         next_rect_animation="" 
         rect_animation="stand"
 		has_special_scale="1"
@@ -96,23 +96,23 @@
 	
 	<LuaComponent 
 		_enabled="1" 
-		script_source_file="mods/AdventureMode/files/alligator/alligator_temple_attack.lua" 
+		script_source_file="mods/SpookyMode/files/alligator/alligator_temple_attack.lua" 
 		execute_every_n_frame="30">
    </LuaComponent>
    
 	<LuaComponent
-		script_source_file="mods/AdventureMode/files/alligator/follow_player_ai_water.lua"
+		script_source_file="mods/SpookyMode/files/alligator/follow_player_ai_water.lua"
 		execute_every_n_frame="1" >
 	</LuaComponent>
 	
     <LuaComponent 
 		_enabled="1" 
-		script_source_file="mods/AdventureMode/files/alligator/alligator_temple.lua" 
+		script_source_file="mods/SpookyMode/files/alligator/alligator_temple.lua" 
 		execute_every_n_frame="60">
    </LuaComponent>
    
 	<LuaComponent
-		script_source_file="mods/AdventureMode/files/alligator/despawn_on_player_death.lua"
+		script_source_file="mods/SpookyMode/files/alligator/despawn_on_player_death.lua"
 		execute_every_n_frame="5"
 	></LuaComponent>
    
@@ -185,7 +185,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="0" 
-			image_file="mods/AdventureMode/files/alligator/alligator_temple_body.xml" 
+			image_file="mods/SpookyMode/files/alligator/alligator_temple_body.xml" 
 			update_transform="0"
 			next_rect_animation="" 
 			rect_animation="stand"
@@ -198,7 +198,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="1" 
-			image_file="mods/AdventureMode/files/alligator/alligator_temple_body4.png" 
+			image_file="mods/SpookyMode/files/alligator/alligator_temple_body4.png" 
 			offset_x="15" 
 			offset_y="10" 
 			z_index="1.005"
@@ -211,7 +211,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="1" 
-			image_file="mods/AdventureMode/files/alligator/alligator_temple_body.xml" 
+			image_file="mods/SpookyMode/files/alligator/alligator_temple_body.xml" 
 			z_index="1.01"
 			update_transform="0"
 			next_rect_animation="eat" 
@@ -222,7 +222,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="1" 
-			image_file="mods/AdventureMode/files/alligator/alligator_temple_body2.png" 
+			image_file="mods/SpookyMode/files/alligator/alligator_temple_body2.png" 
 			offset_x="22" 
 			offset_y="10" 
 			z_index="1.02"
@@ -235,7 +235,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="1" 
-			image_file="mods/AdventureMode/files/alligator/alligator_temple_body2.png" 
+			image_file="mods/SpookyMode/files/alligator/alligator_temple_body2.png" 
 			offset_x="22" 
 			offset_y="10" 
 			z_index="1.03"
@@ -248,7 +248,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="1" 
-			image_file="mods/AdventureMode/files/alligator/alligator_temple_body3.xml" 
+			image_file="mods/SpookyMode/files/alligator/alligator_temple_body3.xml" 
 			z_index="1.04"
 			update_transform="0"
 			next_rect_animation="eat" 
@@ -259,7 +259,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="1" 
-			image_file="mods/AdventureMode/files/alligator/alligator_temple_tail1.png" 
+			image_file="mods/SpookyMode/files/alligator/alligator_temple_tail1.png" 
 			offset_x="17" 
 			offset_y="10" 
 			z_index="1.05"
@@ -272,7 +272,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="1" 
-			image_file="mods/AdventureMode/files/alligator/alligator_temple_tail2.png" 
+			image_file="mods/SpookyMode/files/alligator/alligator_temple_tail2.png" 
 			offset_x="17" 
 			offset_y="10" 
 			z_index="1.06"
@@ -285,7 +285,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="1" 
-			image_file="mods/AdventureMode/files/alligator/alligator_temple_tail2.png" 
+			image_file="mods/SpookyMode/files/alligator/alligator_temple_tail2.png" 
 			offset_x="17" 
 			offset_y="10" 
 			z_index="1.07"
@@ -298,7 +298,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="1" 
-			image_file="mods/AdventureMode/files/alligator/alligator_temple_tail3.png" 
+			image_file="mods/SpookyMode/files/alligator/alligator_temple_tail3.png" 
 			offset_x="11" 
 			offset_y="10" 
 			z_index="1.08"
@@ -309,7 +309,7 @@
 		</SpriteComponent>
 		
 		<LuaComponent
-			script_damage_received="mods/AdventureMode/files/kill_parent_on_death.lua"
+			script_damage_received="mods/SpookyMode/files/kill_parent_on_death.lua"
 			>
 		</LuaComponent>
 		

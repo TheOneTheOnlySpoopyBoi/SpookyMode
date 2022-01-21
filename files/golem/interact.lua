@@ -1,7 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
-dofile_once("mods/AdventureMode/lib/coroutines.lua")
-dofile_once("mods/AdventureMode/files/util.lua")
-local dialog_system = dofile_once("mods/AdventureMode/lib/DialogSystem/dialog_system.lua")
+dofile_once("mods/SpookyMode/lib/coroutines.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
+local dialog_system = dofile_once("mods/SpookyMode/lib/DialogSystem/dialog_system.lua")
 
 -- Make NPC stop walking while player is close
 local entity_id = GetUpdatedEntityID()
@@ -19,7 +19,7 @@ end
 
 local dialog_active = {
   name = "Golem",
-  portrait = "mods/AdventureMode/files/golem/portrait.png",
+  portrait = "mods/SpookyMode/files/golem/portrait.png",
   typing_sound = "stone", 
   -- There are currently 6: default, sans, one, two, three, four and "none" to turn it off, if not specified uses "default"
   text = [[
@@ -101,9 +101,9 @@ local dialog_active = {
                       local did_hit ,hit_x ,hit_y = RaytraceSurfaces(x + lookahead + i * 5, y - 20, x + lookahead + (i + 1) * 5, y - 20)
                       if did_hit then
                         GameScreenshake(100, x, y)
-                        shoot_projectile(entity_id, "mods/AdventureMode/files/golem/explosion.xml", x + 22 + i * 5, y - 30, 0, 0, false)
-                        shoot_projectile(entity_id, "mods/AdventureMode/files/golem/explosion.xml", x + 22 + i * 5, y - 10, 0, 0, false)
-                        shoot_projectile(entity_id, "mods/AdventureMode/files/golem/explosion.xml", x + 22 + i * 5, y + 10, 0, 0, false)
+                        shoot_projectile(entity_id, "mods/SpookyMode/files/golem/explosion.xml", x + 22 + i * 5, y - 30, 0, 0, false)
+                        shoot_projectile(entity_id, "mods/SpookyMode/files/golem/explosion.xml", x + 22 + i * 5, y - 10, 0, 0, false)
+                        shoot_projectile(entity_id, "mods/SpookyMode/files/golem/explosion.xml", x + 22 + i * 5, y + 10, 0, 0, false)
                         break
                       end
                       wait(0)
@@ -120,7 +120,7 @@ local dialog_active = {
                   EntitySetComponentIsEnabled(entity_id, animal_ai_component, true)
                   EntitySetComponentIsEnabled(entity_id, sprite_animator_component, true)
                   ComponentSetValue2(animal_ai_component, "max_distance_to_move_from_home", max_distance_to_move_from_home)
-                  GlobalsSetValue("AdventureMode_golem_has_destroyed_wall", "1")
+                  GlobalsSetValue("SpookyMode_golem_has_destroyed_wall", "1")
                   set_var_store_bool(entity_id, "walking_to_wall", false)
                 end)
               end
@@ -137,7 +137,7 @@ local dialog_active = {
 
 local dialog_wall_destroyed = {
   name = "Golem",
-  portrait = "mods/AdventureMode/files/golem/portrait.png",
+  portrait = "mods/SpookyMode/files/golem/portrait.png",
   typing_sound = "stone", 
   text = [[
     You may now pass.
@@ -158,7 +158,7 @@ local dialog_wall_destroyed = {
               text = "Leave",
               func = function(dialog)
                 dialog.close(function()
-                  GlobalsSetValue("AdventureMode_golem_has_spoken_1", "1")
+                  GlobalsSetValue("SpookyMode_golem_has_spoken_1", "1")
                 end)
               end
             }
@@ -175,7 +175,7 @@ local dialog_wall_destroyed = {
 
  -- local dialog_extra_1 = {
  --   name = "Golem",
- --   portrait = "mods/AdventureMode/files/golem/portrait.png",
+ --   portrait = "mods/SpookyMode/files/golem/portrait.png",
  --   typing_sound = "stone", 
  --   text = [[
  --           {@delay 4}It's quite intriguing how you {@color cc97ea}Alchemists {@color ffffff}seek such
@@ -186,7 +186,7 @@ local dialog_wall_destroyed = {
 
 local dialog_extra_1 = {
   name = "Golem",
-  portrait = "mods/AdventureMode/files/golem/portrait.png",
+  portrait = "mods/SpookyMode/files/golem/portrait.png",
   typing_sound = "stone", 
   text = [[
     {@delay 6}Mmmm donuts...
@@ -195,7 +195,7 @@ local dialog_extra_1 = {
 
 local dialog_extra_2 = {
   name = "Golem",
-  portrait = "mods/AdventureMode/files/golem/portrait.png",
+  portrait = "mods/SpookyMode/files/golem/portrait.png",
   typing_sound = "stone", 
   text = [[
     {@delay 4}You're still waiting for answers?{@pause 30}
@@ -206,12 +206,12 @@ local dialog_extra_2 = {
 
 function interacting(entity_who_interacted, entity_interacted, interactable_name)
   local dialog = dialog_active
-if GlobalsGetValue("AdventureMode_golem_has_spoken_2", "0") == "1" then
+if GlobalsGetValue("SpookyMode_golem_has_spoken_2", "0") == "1" then
   dialog = dialog_extra_2
-elseif GlobalsGetValue("AdventureMode_golem_has_spoken_1", "0") == "1" then
-  GlobalsSetValue("AdventureMode_golem_has_spoken_2", "1")
+elseif GlobalsGetValue("SpookyMode_golem_has_spoken_1", "0") == "1" then
+  GlobalsSetValue("SpookyMode_golem_has_spoken_2", "1")
   dialog = dialog_extra_1
-elseif GlobalsGetValue("AdventureMode_golem_has_destroyed_wall", "0") == "1" then
+elseif GlobalsGetValue("SpookyMode_golem_has_destroyed_wall", "0") == "1" then
   dialog = dialog_wall_destroyed
 end
   dialog_system.open_dialog(dialog)

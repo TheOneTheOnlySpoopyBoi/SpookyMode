@@ -1,13 +1,13 @@
-dofile_once("mods/AdventureMode/lib/coroutines.lua")
-dofile_once("mods/AdventureMode/files/util.lua")
-dofile_once("mods/AdventureMode/files/camera.lua")
+dofile_once("mods/SpookyMode/lib/coroutines.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/camera.lua")
 
 set_controls_enabled(false)
 sequence(function()
 
   local world_state = GameGetWorldStateEntity()
   EntityAddComponent(world_state, "LuaComponent", {
-	  script_source_file="mods/AdventureMode/files/music_player.lua",
+	  script_source_file="mods/SpookyMode/files/music_player.lua",
   	  execute_every_n_frame=1,
   	  execute_on_added=1
   })
@@ -15,8 +15,8 @@ sequence(function()
   set_camera_manual(true)
   camera_set_position(400, -800)
   -- camera_tracking_shot(400, -800, 400, -580, 0.0025)
-  EntityLoad("mods/AdventureMode/files/intro_logo/aloittaa.xml", 400, -850)
-  GameCreateSpriteForXFrames("mods/AdventureMode/files/intro_logo/version_info.png", 550, -850, true, 0, 0, 500, false)
+  EntityLoad("mods/SpookyMode/files/intro_logo/aloittaa.xml", 400, -850)
+  GameCreateSpriteForXFrames("mods/SpookyMode/files/intro_logo/version_info.png", 550, -850, true, 0, 0, 500, false)
   camera_tracking_shot(400, -800, 400, -800, 0.01)
   wait(180)
   camera_tracking_shot(400, -800, 400, -630, 0.0025)

@@ -1,9 +1,9 @@
 <Entity>
 
-  <Base file="mods/AdventureMode/files/pickups/base.xml">
+  <Base file="mods/SpookyMode/files/pickups/base.xml">
 
     <SpriteComponent
-      image_file="mods/AdventureMode/files/pickups/jetpack.png"
+      image_file="mods/SpookyMode/files/pickups/jetpack.png"
       offset_x="7"
       offset_y="4"
     ></SpriteComponent>
@@ -19,7 +19,7 @@
   </Base>
 	
 	<LuaComponent 
-		script_item_picked_up="mods/AdventureMode/files/pickups/jetpack_pickup.lua"
+		script_item_picked_up="mods/SpookyMode/files/pickups/jetpack_pickup.lua"
   ></LuaComponent>
 
 </Entity>

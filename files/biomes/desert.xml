@@ -1,7 +1,7 @@
 <Biome>
   <Topology 
     name="_EMPTY_"
-    lua_script="mods/AdventureMode/files/biomes/desert.lua"
+    lua_script="mods/SpookyMode/files/biomes/desert.lua"
     >
   </Topology>
   <Materials 

@@ -2,7 +2,7 @@ local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)
 
 for i=1, 5 do
-  if GlobalsGetValue("AdventureMode_puzzle_torch_active_" .. i, "0") == "0" then
+  if GlobalsGetValue("SpookyMode_puzzle_torch_active_" .. i, "0") == "0" then
     return
   end
 end

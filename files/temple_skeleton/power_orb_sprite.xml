@@ -1,5 +1,5 @@
 <Sprite
- filename="mods/AdventureMode/files/temple_skeleton/power_orb.png"
+ filename="mods/SpookyMode/files/temple_skeleton/power_orb.png"
  offset_x="10"
  offset_y="10"
  default_animation="fireball" >

@@ -1,5 +1,5 @@
 <Sprite 
-	filename="mods/AdventureMode/files/temple_skeleton/temple_skeleton.png" 
+	filename="mods/SpookyMode/files/temple_skeleton/temple_skeleton.png" 
 	offset_x="10" 
 	offset_y="31" 
 	default_animation="stand"

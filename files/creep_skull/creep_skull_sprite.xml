@@ -1,5 +1,5 @@
 <Sprite
- filename="mods/AdventureMode/files/creep_skull/creep_skull.png"
+ filename="mods/SpookyMode/files/creep_skull/creep_skull.png"
  offset_x="27"
  offset_y="25" 
  default_animation="stand" >

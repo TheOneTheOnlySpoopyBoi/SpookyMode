@@ -15,12 +15,12 @@
   <PhysicsImageShapeComponent 
     is_root="1"
     centered="1"
-    image_file="mods/AdventureMode/files/box.png"
+    image_file="mods/SpookyMode/files/box.png"
     material="wood_prop" >
   </PhysicsImageShapeComponent>
   
 	<LuaComponent
-		script_source_file="mods/AdventureMode/files/physics_float.lua"
+		script_source_file="mods/SpookyMode/files/physics_float.lua"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>

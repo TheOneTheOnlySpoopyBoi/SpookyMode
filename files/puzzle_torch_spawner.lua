@@ -1,4 +1,4 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)
@@ -6,9 +6,9 @@ local x, y = EntityGetTransform(entity_id)
 local torch_positions = {}
 -- Check if all torche places have been loaded yet so we know the locations we should spawn the torches in
 for i=1, 5 do
-  local pos_x = GlobalsGetValue("AdventureMode_puzzle_torch_pos_x_" .. i, "nil")
+  local pos_x = GlobalsGetValue("SpookyMode_puzzle_torch_pos_x_" .. i, "nil")
   if pos_x ~= "nil" then
-    local pos_y = GlobalsGetValue("AdventureMode_puzzle_torch_pos_y_" .. i, "nil")
+    local pos_y = GlobalsGetValue("SpookyMode_puzzle_torch_pos_y_" .. i, "nil")
     table.insert(torch_positions, { x = pos_x, y = pos_y })
   end
 end
@@ -29,7 +29,7 @@ elseif #torch_positions == 5 then
   end)
   torches = {}
   for i, pos in ipairs(torch_positions) do
-    local torch = EntityLoad("mods/AdventureMode/files/puzzle_torch.xml", torch_positions[i].x, torch_positions[i].y)
+    local torch = EntityLoad("mods/SpookyMode/files/puzzle_torch.xml", torch_positions[i].x, torch_positions[i].y)
     set_var_store_int(torch, "order", i)
     table.insert(torches, torch)
   end

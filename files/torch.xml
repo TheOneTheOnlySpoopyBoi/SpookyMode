@@ -4,7 +4,7 @@
     _tags="enabled_in_world"
     item_name="Charred stick"
     ui_description="A charred stick?! What kind of reward is this?!"
-    ui_sprite="mods/AdventureMode/files/torch_off_ui_gfx.png"
+    ui_sprite="mods/SpookyMode/files/torch_off_ui_gfx.png"
     max_child_items="0"
     is_pickable="1"
     is_equipable_forced="1"
@@ -51,7 +51,7 @@
 
   <SpriteComponent
     _tags="enabled_in_world,character"
-    image_file="mods/AdventureMode/files/torch_unlit.png"
+    image_file="mods/SpookyMode/files/torch_unlit.png"
     next_rect_animation="out"
     rect_animation="out"
     offset_animator_offset.y="3"
@@ -222,21 +222,21 @@
 
   <LuaComponent
     _tags="enabled_in_hand,enabled_in_world,fire"
-    script_source_file="mods/AdventureMode/files/torch_light.lua"
-    script_enabled_changed="mods/AdventureMode/files/torch_light.lua"
+    script_source_file="mods/SpookyMode/files/torch_light.lua"
+    script_enabled_changed="mods/SpookyMode/files/torch_light.lua"
     execute_every_n_frame="1"
     execute_on_added="1"
   ></LuaComponent>
 
   <LuaComponent
     _tags="enabled_in_hand,enabled_in_world"
-    script_source_file="mods/AdventureMode/files/torch_reignite_checker.lua"
+    script_source_file="mods/SpookyMode/files/torch_reignite_checker.lua"
     execute_every_n_frame="1"
   ></LuaComponent>
 
   <LuaComponent
     _tags="enabled_in_world"
-    script_item_picked_up="mods/AdventureMode/files/torch_pickup.lua"
+    script_item_picked_up="mods/SpookyMode/files/torch_pickup.lua"
     execute_every_n_frame="-1"
   ></LuaComponent>
 
@@ -273,13 +273,13 @@
 
   <LuaComponent
     _tags="enabled_in_hand,enabled_in_world,enabled_in_inventory"
-    script_material_area_checker_success="mods/AdventureMode/files/torch_material_checker.lua"
+    script_material_area_checker_success="mods/SpookyMode/files/torch_material_checker.lua"
     execute_every_n_frame="-1"
   ></LuaComponent>
   
 	<LuaComponent
 		_tags="enabled_in_world"
-		script_source_file="mods/AdventureMode/files/torch_float.lua"
+		script_source_file="mods/SpookyMode/files/torch_float.lua"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>

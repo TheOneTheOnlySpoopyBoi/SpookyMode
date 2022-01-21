@@ -1,4 +1,4 @@
-if GlobalsGetValue("AdventureMode_respawn_in_progress", "0") == "1" then
+if GlobalsGetValue("SpookyMode_respawn_in_progress", "0") == "1" then
 	local entity_id = GetUpdatedEntityID()
 
 	local damage_model_component = EntityGetFirstComponentIncludingDisabled(entity_id, "DamageModelComponent")

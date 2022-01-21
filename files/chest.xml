@@ -12,7 +12,7 @@
   ></SpriteComponent>
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/fow_hole.png"
+    image_file="mods/SpookyMode/files/fow_hole.png"
     fog_of_war_hole="1"
     offset_x="32"
     offset_y="24"
@@ -54,12 +54,12 @@
   ></ItemComponent>
 
   <LuaComponent 
-    script_physics_body_modified="mods/AdventureMode/files/chest.lua"
+    script_physics_body_modified="mods/SpookyMode/files/chest.lua"
     execute_times="1"
 	></LuaComponent>
   
   <LuaComponent 
-    script_item_picked_up="mods/AdventureMode/files/chest.lua"
+    script_item_picked_up="mods/SpookyMode/files/chest.lua"
   ></LuaComponent>
 
   <SpriteParticleEmitterComponent
@@ -83,7 +83,7 @@
   ></SpriteParticleEmitterComponent>
 
   <LuaComponent
-    script_source_file="mods/AdventureMode/files/chest_appear.lua"
+    script_source_file="mods/SpookyMode/files/chest_appear.lua"
     execute_every_n_frame="-1"
     execute_on_added="1"
     enable_coroutines="1"

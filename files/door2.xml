@@ -22,22 +22,22 @@
   ></SpriteParticleEmitterComponent>
 
   <PixelSceneComponent
-    pixel_scene="mods/AdventureMode/files/temple_door_materials.png"
-    pixel_scene_visual="mods/AdventureMode/files/temple_door.png"
+    pixel_scene="mods/SpookyMode/files/temple_door_materials.png"
+    pixel_scene_visual="mods/SpookyMode/files/temple_door.png"
     offset_y="0"
     skip_biome_checks="1"
   ></PixelSceneComponent>
 
   <SpriteComponent
     _enabled="0"
-    image_file="mods/AdventureMode/files/temple_door.png"
+    image_file="mods/SpookyMode/files/temple_door.png"
     offset_y="0"
     >
   </SpriteComponent>
 
   <LuaComponent
     _enabled="0"
-    script_source_file="mods/AdventureMode/files/door2.lua"
+    script_source_file="mods/SpookyMode/files/door2.lua"
     execute_every_n_frame="-1"
     execute_on_added="1"
     enable_coroutines="1"

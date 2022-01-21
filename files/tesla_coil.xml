@@ -11,14 +11,14 @@
 	></LightComponent>
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/tesla_coil.png"
+    image_file="mods/SpookyMode/files/tesla_coil.png"
     offset_x="22"
     offset_y="65"
 	z_index="-1"
   ></SpriteComponent>
   
 <!--   <PixelSceneComponent
-    pixel_scene="mods/AdventureMode/files/wand_spawner.png"
+    pixel_scene="mods/SpookyMode/files/wand_spawner.png"
     offset_x="0"
     offset_y="-60"
   ></PixelSceneComponent> -->
@@ -51,7 +51,7 @@
   
    <LuaComponent 
 		_enabled="1" 
-		script_source_file="mods/AdventureMode/files/tesla_coil.lua" 
+		script_source_file="mods/SpookyMode/files/tesla_coil.lua" 
 		execute_every_n_frame="2"
 		>
    </LuaComponent>

@@ -1,6 +1,6 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
-if GlobalsGetValue("AdventureMode_game_complete", "0") == "0" then
+if GlobalsGetValue("SpookyMode_game_complete", "0") == "0" then
 
 	local min_heatwarp_at_x = 550
 	local max_heatwarp_at_x = 0
@@ -15,13 +15,13 @@ if GlobalsGetValue("AdventureMode_game_complete", "0") == "0" then
 		  -- local count = GameGetGameEffectCount(player, "CUSTOM")
 		  -- print("count: " .. type(count) .. " - " .. tostring(count))
 		  -- if count < 1 then
-			if GlobalsGetValue("AdventureMode_respawn_in_progress", "0") == "0" and not get_child_with_name(player, "heatstroke") then
-			  local effect_entity = EntityLoad("mods/AdventureMode/files/heatstroke_effect.xml", x, y)
+			if GlobalsGetValue("SpookyMode_respawn_in_progress", "0") == "0" and not get_child_with_name(player, "heatstroke") then
+			  local effect_entity = EntityLoad("mods/SpookyMode/files/heatstroke_effect.xml", x, y)
 			  EntityAddChild(player, effect_entity)
 			end
-			-- local effect_component_id, effect_entity_id = LoadGameEffectEntityTo(player, "mods/AdventureMode/files/heatstroke_effect.xml")
+			-- local effect_component_id, effect_entity_id = LoadGameEffectEntityTo(player, "mods/SpookyMode/files/heatstroke_effect.xml")
 		  -- end
-		  -- local effect_component_id, effect_entity_id = GetGameEffectLoadTo(player, "ADVENTUREMODE_HEATSTROKE", false)
+		  -- local effect_component_id, effect_entity_id = GetGameEffectLoadTo(player, "SPOOKYMODE_HEATSTROKE", false)
 		end
 	  elseif GameGetFrameNum() % 60 == 0 then -- Only check once per second
 		local heatstroke = get_child_with_name(player, "heatstroke")

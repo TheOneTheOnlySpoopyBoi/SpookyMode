@@ -1,4 +1,4 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)
@@ -57,7 +57,7 @@ if spikes[1].entity_id then
   end
 else
   for i, v in ipairs(spikes) do
-    local spike = EntityLoad("mods/AdventureMode/files/spike_ceiling.xml")
+    local spike = EntityLoad("mods/SpookyMode/files/spike_ceiling.xml")
     v.entity_id = spike
     EntitySetTransform(spike, x + v.x, y - 50 - 150 * math.min(0, v.direction), v.direction == -1 and math.pi or 0)
     set_var_store_int(spike, "order", i)

@@ -1,6 +1,6 @@
 dofile_once("mods/SpookyMode/files/util.lua")
 
-if GlobalsGetValue("AdventureMode_game_complete", "0") == "0" then
+if GlobalsGetValue("SpookyMode_game_complete", "0") == "0" then
 
 	local min_heatwarp_at_x = -1640
 	local max_heatwarp_at_x = -1650
@@ -18,7 +18,7 @@ if GlobalsGetValue("AdventureMode_game_complete", "0") == "0" then
 		  -- local count = GameGetGameEffectCount(player, "CUSTOM")
 		  -- print("count: " .. type(count) .. " - " .. tostring(count))
 		  -- if count < 1 then
-			if GlobalsGetValue("AdventureMode_respawn_in_progress", "0") == "0" and not get_child_with_name(player, "border") then
+			if GlobalsGetValue("SpookyMode_respawn_in_progress", "0") == "0" and not get_child_with_name(player, "border") then
 			  local effect_entity = EntityLoad("mods/SpookyMode/files/border_effect.xml", x, y)
 			  EntityAddChild(player, effect_entity)
 			end

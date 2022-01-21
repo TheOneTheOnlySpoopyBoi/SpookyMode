@@ -1,7 +1,7 @@
 <Entity>
 
   <SpriteComponent
-    image_file="mods/AdventureMode/files/lever_base.png"
+    image_file="mods/SpookyMode/files/lever_base.png"
     offset_x="6"
     offset_y="5"
     z_index="0.9"
@@ -14,7 +14,7 @@
     </InheritTransformComponent>
 
     <SpriteComponent
-      image_file="mods/AdventureMode/files/lever_handle.png"
+      image_file="mods/SpookyMode/files/lever_handle.png"
       offset_x="1"
       offset_y="13"
       z_index="1"
@@ -28,8 +28,8 @@
   ></InteractableComponent>
 
   <LuaComponent
-    script_source_file="mods/AdventureMode/files/lever.lua"
-    script_interacting="mods/AdventureMode/files/lever.lua"
+    script_source_file="mods/SpookyMode/files/lever.lua"
+    script_interacting="mods/SpookyMode/files/lever.lua"
     execute_every_n_frame="1"
   ></LuaComponent>
 

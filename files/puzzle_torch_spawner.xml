@@ -1,7 +1,7 @@
 <Entity>
 
   <LuaComponent
-    script_source_file="mods/AdventureMode/files/puzzle_torch_spawner.lua"
+    script_source_file="mods/SpookyMode/files/puzzle_torch_spawner.lua"
     execute_every_n_frame="30"
     execute_on_removed="1"
   ></LuaComponent>

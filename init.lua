@@ -4,8 +4,8 @@ ModRegisterAudioEventMappings("mods/SpookyMode/files/audio/GUIDs.txt")
 dofile_once("mods/SpookyMode/lib/DialogSystem/init.lua")("mods/SpookyMode/lib/DialogSystem", {
   disable_controls = true,
   sounds = {
-    bones = { bank = "mods/AdventureMode/files/audio/SpookyMode.bank", event = "bones_rattle" },
-    stone = { bank = "mods/AdventureMode/files/audio/SpookyMode.bank", event = "golem_speak" },
+    bones = { bank = "mods/SpookyMode/files/audio/SpookyMode.bank", event = "bones_rattle" },
+    stone = { bank = "mods/SpookyMode/files/audio/SpookyMode.bank", event = "golem_speak" },
   }
 })
 dofile_once("mods/SpookyMode/lib/coroutines.lua")
@@ -14,7 +14,7 @@ dofile_once("mods/SpookyMode/files/util.lua")
 local nxml = dofile_once("mods/SpookyMode/lib/nxml.lua")
 
 -- Overwrite death sound to disable it
-GamePlaySound("mods/AdventureMode/files/audio/death.bank", "dummy_sound", 0, 0)
+GamePlaySound("mods/SpookyMode/files/audio/death.bank", "dummy_sound", 0, 0)
 
 -- Add custom materials
 ModMaterialsFileAdd("mods/SpookyMode/files/materials/materials.xml")
@@ -38,17 +38,17 @@ xml:add_children(nxml.parse_many([[
   color="ff877531">
 </Biome>
 <Biome
-  biome_filename="mods/AdventureMode/files/biomes/dark.xml"
+  biome_filename="mods/SpookyMode/files/biomes/dark.xml"
   height_index="0"
   color="ff282620">
 </Biome>
 <Biome
-  biome_filename="mods/AdventureMode/files/biomes/pyramid.xml"
+  biome_filename="mods/SpookyMode/files/biomes/pyramid.xml"
   height_index="0"
   color="ffec2b42">
 </Biome>
 <Biome
-  biome_filename="mods/AdventureMode/files/biomes/golem_room.xml"
+  biome_filename="mods/SpookyMode/files/biomes/golem_room.xml"
   height_index="0"
   color="ff986b4f">
 </Biome>
@@ -85,7 +85,7 @@ local starting_positions = {
   { x = -1542, y = -80 }, -- 1 Intro
 }
 
-ModTextFileSetContent("mods/AdventureMode/_virtual/magic_numbers.xml", string.format([[
+ModTextFileSetContent("mods/SpookyMode/_virtual/magic_numbers.xml", string.format([[
 <MagicNumbers
   DESIGN_PLAYER_START_POS_X="%d"
   DESIGN_PLAYER_START_POS_Y="%d"
@@ -94,25 +94,25 @@ ModTextFileSetContent("mods/AdventureMode/_virtual/magic_numbers.xml", string.fo
 
   -- DEBUG_MATERIAL_AREA_CHECKER="1"
   -- DEBUG_COLLISION_TRIGGERS="1"
-ModMagicNumbersFileAdd("mods/AdventureMode/_virtual/magic_numbers.xml")
+ModMagicNumbersFileAdd("mods/SpookyMode/_virtual/magic_numbers.xml")
 
--- ModLuaFileAppend("data/scripts/gun/gun_actions.lua", "mods/AdventureMode/files/gun_actions_append.lua")
+-- ModLuaFileAppend("data/scripts/gun/gun_actions.lua", "mods/SpookyMode/files/gun_actions_append.lua")
 
 function OnPlayerSpawned(player)
   local x, y = EntityGetTransform(player)
 
-  GlobalsSetValue("AdventureMode_DEBUG_starting_position", starting_position)
+  GlobalsSetValue("SpookyMode_DEBUG_starting_position", starting_position)
 
-  if GlobalsGetValue("AdventureMode_player_initialized", "0") == "0" then
-    GlobalsSetValue("AdventureMode_player_initialized", "1")
+  if GlobalsGetValue("SpookyMode_player_initialized", "0") == "0" then
+    GlobalsSetValue("SpookyMode_player_initialized", "1")
     local world_state_entity = GameGetWorldStateEntity()
     -- if starting_position == 1 then
-    --   EntityLoad("mods/AdventureMode/files/intro.xml")
+    --   EntityLoad("mods/SpookyMode/files/intro.xml")
     -- else
-      GlobalsSetValue("AdventureMode_respawn_x", starting_positions[starting_position].x)
-      GlobalsSetValue("AdventureMode_respawn_y", starting_positions[starting_position].y)
+      GlobalsSetValue("SpookyMode_respawn_x", starting_positions[starting_position].x)
+      GlobalsSetValue("SpookyMode_respawn_y", starting_positions[starting_position].y)
       EntityAddComponent(world_state_entity, "LuaComponent", {
-        script_source_file="mods/AdventureMode/files/music_player.lua",
+        script_source_file="mods/SpookyMode/files/music_player.lua",
         execute_every_n_frame=1,
         execute_on_added=1
       })
@@ -151,8 +151,8 @@ function OnPlayerSpawned(player)
     -- Make immortal
     entity_set_component_value(player, "DamageModelComponent", "wait_for_kill_flag_on_death", true)
     EntityAddComponent2(player, "LuaComponent", {
-      script_source_file = "mods/AdventureMode/files/player_lethal_damage_watcher.lua",
-      script_damage_received = "mods/AdventureMode/files/player_lethal_damage_watcher.lua",
+      script_source_file = "mods/SpookyMode/files/player_lethal_damage_watcher.lua",
+      script_damage_received = "mods/SpookyMode/files/player_lethal_damage_watcher.lua",
       execute_every_n_frame=-1,
       execute_on_added=true,
       enable_coroutines=true,
@@ -179,7 +179,7 @@ function OnPlayerSpawned(player)
 end
 
 function handle_arm_sprite()
-  local respawn_in_progress = GlobalsGetValue("AdventureMode_respawn_in_progress", "0") == "1"
+  local respawn_in_progress = GlobalsGetValue("SpookyMode_respawn_in_progress", "0") == "1"
   local arm_r_entity = EntityGetWithName("arm_r")
   if not respawn_in_progress and arm_r_entity > 0 then
     local inventory_quick = EntityGetWithName("inventory_quick")
@@ -218,7 +218,7 @@ function OnWorldPreUpdate()
     local inventory_quick = EntityGetWithName("inventory_quick")
     local player = EntityGetWithTag("player_unit")[1]
     if GuiButton(gui, new_id(), 0, 0, "Give torch") then
-      local item = EntityLoad("mods/AdventureMode/files/torch.xml")
+      local item = EntityLoad("mods/SpookyMode/files/torch.xml")
       GamePickUpInventoryItem(player, item, false)
     end
     if GuiButton(gui, new_id(), 0, 0, "Give rock") then
@@ -226,7 +226,7 @@ function OnWorldPreUpdate()
       GamePickUpInventoryItem(player, item, false)
     end
     if GuiButton(gui, new_id(), 0, 0, "Give gem") then
-      local item = EntityLoad("mods/AdventureMode/files/gem_item.xml")
+      local item = EntityLoad("mods/SpookyMode/files/gem_item.xml")
       GamePickUpInventoryItem(player, item, false)
     end
     if GuiButton(gui, new_id(), 0, 0, "Die") then
@@ -234,7 +234,7 @@ function OnWorldPreUpdate()
       EntityInflictDamage(player, 999, "DAMAGE_MELEE", "", "NORMAL", 0, 0)
     end
     if GuiButton(gui, new_id(), 0, 0, "Ending teleport") then
-      dofile_once("mods/AdventureMode/files/ending_portal.lua")
+      dofile_once("mods/SpookyMode/files/ending_portal.lua")
       local player = EntityGetWithTag("player_unit")[1]
       if player then
         do_teleport(player)
@@ -247,14 +247,14 @@ function OnWorldPreUpdate()
       local player = EntityGetWithTag("player_unit")[1]
       if player then
         local x, y = EntityGetTransform(player)
-        EntityLoad("mods/AdventureMode/files/brazier.xml", x, y)
+        EntityLoad("mods/SpookyMode/files/brazier.xml", x, y)
       end
     end
     if GuiButton(gui, new_id(), 0, 0, "Bones rattling") then
-      GamePlaySound("mods/AdventureMode/files/audio/AdventureMode.bank", "bones_rattle", 0, 0)
+      GamePlaySound("mods/SpookyMode/files/audio/SpookyMode.bank", "bones_rattle", 0, 0)
     end
     if GuiButton(gui, new_id(), 0, 0, "Rattle me bones!") then
-      GamePlaySound("mods/AdventureMode/files/audio/AdventureMode.bank", "rattle_me_bones", 0, 0)
+      GamePlaySound("mods/SpookyMode/files/audio/SpookyMode.bank", "rattle_me_bones", 0, 0)
     end
     if GuiButton(gui, new_id(), 0, 0, "Swan!!") then
       local player = EntityGetWithTag("player_unit")[1]

@@ -1,9 +1,9 @@
 <Entity>
 
-	<Base file="mods/AdventureMode/files/door_lever_labyrinth/laserdoor_base.xml">
+	<Base file="mods/SpookyMode/files/door_lever_labyrinth/laserdoor_base.xml">
 
     <PhysicsImageShapeComponent
-      image_file="mods/AdventureMode/files/door_lever_labyrinth/door_body_invis_h.png"
+      image_file="mods/SpookyMode/files/door_lever_labyrinth/door_body_invis_h.png"
       offset_x="0"
       offset_y="4"
     ></PhysicsImageShapeComponent>
@@ -19,7 +19,7 @@
     ></PhysicsJointComponent>
 
   	<SpriteComponent
-      image_file="mods/AdventureMode/files/door_lever_labyrinth/door_h.png"
+      image_file="mods/SpookyMode/files/door_lever_labyrinth/door_h.png"
       offset_x="1"
       offset_y="4"
     ></SpriteComponent>

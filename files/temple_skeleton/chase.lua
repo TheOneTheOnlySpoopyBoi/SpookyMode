@@ -42,7 +42,7 @@ if player then
     end
   end
   for i, v in ipairs(player_positions) do
-    GameCreateSpriteForXFrames("mods/AdventureMode/files/dot_5x5.png", v.x, v.y, true, 0, 0, 1)
+    GameCreateSpriteForXFrames("mods/SpookyMode/files/dot_5x5.png", v.x, v.y, true, 0, 0, 1)
   end
   local physics_body_component = EntityGetFirstComponentIncludingDisabled(entity_id, "PhysicsBodyComponent")
   local vx, vy = PhysicsGetComponentVelocity(entity_id, physics_body_component)
@@ -129,7 +129,7 @@ function draw_arrow(x1, y1, x2, y2)
     local arrow = EntityCreateNew("arrow")
     EntitySetTransform(arrow, x1, y1, 0, 1, 0.1)
     EntityAddComponent2(arrow, "SpriteComponent", {
-      image_file="mods/AdventureMode/files/box_10x10.png",
+      image_file="mods/SpookyMode/files/box_10x10.png",
       offset_x=0,
       offset_y=5,
       alpha=1.0,
@@ -167,7 +167,7 @@ function draw_arrow(x1, y1, x2, y2)
   })
   EntityAddChild(entity_id, ent)
   EntityAddComponent2(ent, "SpriteComponent", {
-    image_file="mods/AdventureMode/files/box_10x10.png",
+    image_file="mods/SpookyMode/files/box_10x10.png",
     special_scale_x=scale_x,
     special_scale_y=scale_y,
     offset_x=-aabb.min_x / scale_x,

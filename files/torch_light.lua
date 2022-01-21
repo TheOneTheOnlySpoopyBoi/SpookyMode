@@ -1,4 +1,4 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
 local entity_id = GetUpdatedEntityID()
 function get_state()
@@ -27,7 +27,7 @@ if not get_child_with_name(entity_id, "light_cones") then
     local sub_entity = EntityCreateNew()
     local sprite_component = EntityAddComponent2(sub_entity, "SpriteComponent", {
       _tags="enabled_in_world,enabled_in_hand,fire",
-      image_file="mods/AdventureMode/files/cone_of_light.png",
+      image_file="mods/SpookyMode/files/cone_of_light.png",
       fog_of_war_hole=true,
       smooth_filtering=true,
       offset_x=12,

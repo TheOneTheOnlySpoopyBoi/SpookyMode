@@ -1,5 +1,5 @@
-dofile_once("mods/AdventureMode/files/util.lua")
-dofile_once("mods/AdventureMode/lib/coroutines.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
+dofile_once("mods/SpookyMode/lib/coroutines.lua")
 dofile_once("data/scripts/status_effects/status_list.lua")
 
 local function remove_game_effects(entity_id)
@@ -16,8 +16,8 @@ local function remove_game_effects(entity_id)
     INGESTION_FREEZING = true,
     INGESTION_ON_FIRE = true,
     CURSE_CLOUD = true,
-    ADVENTUREMODE_SADNESS = true,
-    ADVENTUREMODE_CANNIBALISM = true,
+    SPOOKYMODE_SADNESS = true,
+    SPOOKYMODE_CANNIBALISM = true,
   }
   -- Some game effects have different IDs in the status list than the GameEffectComponents for some reason...
   local convert_ids = {
@@ -45,20 +45,20 @@ local function entity_and_children_set_components_with_tag_enabled(entity_id, ta
 end
 
 function damage_received(damage, message, entity_thats_responsible, is_fatal, projectile_thats_responsible)
-  if is_fatal and GlobalsGetValue("AdventureMode_respawn_in_progress", "0") == "0" then
-    local respawn_x = tonumber(GlobalsGetValue("AdventureMode_respawn_x", "0"))
-    local respawn_y = tonumber(GlobalsGetValue("AdventureMode_respawn_y", "0"))
+  if is_fatal and GlobalsGetValue("SpookyMode_respawn_in_progress", "0") == "0" then
+    local respawn_x = tonumber(GlobalsGetValue("SpookyMode_respawn_x", "0"))
+    local respawn_y = tonumber(GlobalsGetValue("SpookyMode_respawn_y", "0"))
     local entity_id = GetUpdatedEntityID()
     if respawn_x == 0 then
       entity_set_component_value(entity_id, "DamageModelComponent", "kill_now", true)
     end
     local x, y, _, scale_x = EntityGetTransform(entity_id)
     GamePlaySound("data/audio/Desktop/player.bank", "player/death", x, y)
-    GamePlaySound("mods/AdventureMode/files/audio/AdventureMode.bank", "death_sound", x, y)
+    GamePlaySound("mods/SpookyMode/files/audio/SpookyMode.bank", "death_sound", x, y)
     local player_vel_comp = EntityGetFirstComponentIncludingDisabled(entity_id, "VelocityComponent")
     local character_data_component = EntityGetFirstComponentIncludingDisabled(entity_id, "CharacterDataComponent")
     local damage_model_component = EntityGetFirstComponentIncludingDisabled(entity_id, "DamageModelComponent")
-    local corpse_spawner = EntityLoad("mods/AdventureMode/files/player_corpse_spawner.xml", x, y)
+    local corpse_spawner = EntityLoad("mods/SpookyMode/files/player_corpse_spawner.xml", x, y)
     local vx, vy = ComponentGetValue2(player_vel_comp, "mVelocity")
     set_var_store_float(corpse_spawner, "vel_x", vx)
     set_var_store_float(corpse_spawner, "vel_y", vy)
@@ -102,7 +102,7 @@ function damage_received(damage, message, entity_thats_responsible, is_fatal, pr
     ComponentSetValue2(comp, "visible", false)
     EntityRefreshSprite(entity_id, comp)
 
-    GlobalsSetValue("AdventureMode_respawn_in_progress", "1")
+    GlobalsSetValue("SpookyMode_respawn_in_progress", "1")
 
     -- Remove heatstroke
     local heatstroke = get_child_with_name(entity_id, "heatstroke")
@@ -190,7 +190,7 @@ function damage_received(damage, message, entity_thats_responsible, is_fatal, pr
       EntityRefreshSprite(entity_id, comp)
 
       EntitySetTransform(entity_id, respawn_x, respawn_y)
-      GlobalsSetValue("AdventureMode_respawn_in_progress", "0")
+      GlobalsSetValue("SpookyMode_respawn_in_progress", "0")
 
       set_controls_enabled(true)
     end)

@@ -9,10 +9,10 @@
   ></CollisionTriggerComponent>
 
   <LuaComponent
-    script_collision_trigger_hit="mods/AdventureMode/files/rising_lava/rising_lava_trigger.lua"
+    script_collision_trigger_hit="mods/SpookyMode/files/rising_lava/rising_lava_trigger.lua"
     execute_every_n_frame="-1"
   ></LuaComponent>
 
-  <!-- <Base file="mods/AdventureMode/files/aabb_visualizer.xml" /> -->
+  <!-- <Base file="mods/SpookyMode/files/aabb_visualizer.xml" /> -->
 
 </Entity>

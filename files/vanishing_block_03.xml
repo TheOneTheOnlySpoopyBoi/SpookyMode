@@ -1,6 +1,6 @@
 <Entity>
 
-  <Base file="mods/AdventureMode/files/vanishing_block_base.xml" />
+  <Base file="mods/SpookyMode/files/vanishing_block_base.xml" />
 
   <VariableStorageComponent
     name="cycle"

@@ -91,7 +91,7 @@
   ></CollisionTriggerComponent>
 
   <LuaComponent
-    script_collision_trigger_hit="mods/AdventureMode/files/ending_portal.lua"
+    script_collision_trigger_hit="mods/SpookyMode/files/ending_portal.lua"
     execute_every_n_frame="-1"
   ></LuaComponent>
 

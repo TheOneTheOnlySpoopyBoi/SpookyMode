@@ -1,5 +1,5 @@
 <Sprite
- filename="mods/AdventureMode/files/alligator/alligator_temple_small_body.png"
+ filename="mods/SpookyMode/files/alligator/alligator_temple_small_body.png"
  offset_x="11"
  offset_y="5"
  default_animation="eat" >

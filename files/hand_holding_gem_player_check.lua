@@ -1,7 +1,7 @@
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)
 
-if GlobalsGetValue("AdventureMode_red_gem_picked", "0") == "1" then
+if GlobalsGetValue("SpookyMode_red_gem_picked", "0") == "1" then
   EntityRemoveComponent(entity_id, GetUpdatedComponentID())
 end
 

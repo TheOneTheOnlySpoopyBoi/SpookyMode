@@ -18,7 +18,7 @@ function down()
   local torch = EntityGetWithName("puzzle_torch_" .. order)
   -- SetValueBool("something", true)
   EntityAddComponent2(torch, "LuaComponent", {
-    script_source_file = "mods/AdventureMode/files/puzzle_torch_turn_on.lua",
+    script_source_file = "mods/SpookyMode/files/puzzle_torch_turn_on.lua",
     -- execute_on_added=true,
     execute_every_n_frame=1,
     remove_after_executed=true,
@@ -45,7 +45,7 @@ function up()
   local order = ComponentGetValue2(var_store, "value_int")
   local torch = EntityGetWithName("puzzle_torch_" .. order)
   EntityAddComponent2(torch, "LuaComponent", {
-    script_source_file = "mods/AdventureMode/files/puzzle_torch_turn_off.lua",
+    script_source_file = "mods/SpookyMode/files/puzzle_torch_turn_off.lua",
     execute_every_n_frame=1,
     remove_after_executed=true,
     -- execute_on_added=true,

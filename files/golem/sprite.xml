@@ -1,5 +1,5 @@
 <Sprite
-  filename="mods/AdventureMode/files/golem/sprite.png"
+  filename="mods/SpookyMode/files/golem/sprite.png"
   default_animation="sleep">
 
   <!-- sleep -->

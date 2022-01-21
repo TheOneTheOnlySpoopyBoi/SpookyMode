@@ -1,5 +1,5 @@
-dofile_once("mods/AdventureMode/lib/coroutines.lua")
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/lib/coroutines.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
 local entity_id = GetUpdatedEntityID()
 

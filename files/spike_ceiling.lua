@@ -1,5 +1,5 @@
-dofile_once("mods/AdventureMode/lib/coroutines.lua")
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/lib/coroutines.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
@@ -28,7 +28,7 @@ else
       for i=1, 10 do
         local x, y, r = EntityGetTransform(entity_id)
         EntitySetTransform(entity_id, x, y + 5 * direction)
-        GamePlaySound("mods/AdventureMode/files/audio/AdventureMode.bank", "spike_trap", x, y)
+        GamePlaySound("mods/SpookyMode/files/audio/SpookyMode.bank", "spike_trap", x, y)
         wait(0)
       end
       wait(pause_in)

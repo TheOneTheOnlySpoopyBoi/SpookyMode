@@ -1,11 +1,11 @@
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)
 
-if GlobalsGetValue("AdventureMode_respawn_in_progress", "0") == "1" then
+if GlobalsGetValue("SpookyMode_respawn_in_progress", "0") == "1" then
 
-	GlobalsSetValue("AdventureMode_poison_challenge_in_progress", "0")
+	GlobalsSetValue("SpookyMode_poison_challenge_in_progress", "0")
 	
-	EntityLoad("mods/AdventureMode/files/rising_lava/lava_remover.xml", x - 12, y + 332 )
+	EntityLoad("mods/SpookyMode/files/rising_lava/lava_remover.xml", x - 12, y + 332 )
 	
 	EntityKill(entity_id)
 end

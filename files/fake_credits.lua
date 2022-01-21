@@ -40,7 +40,7 @@ end
 
 GuiLayoutBeginVertical(gui, 50, 100)
 GuiOptionsAddForNextWidget(gui, GUI_OPTION.Align_HorizontalCenter)
-GuiImage(gui, 2, 0, roll_credits_progress, "mods/AdventureMode/files/intro_logo/aloittaa_colours.png", 1, 1, 1)
+GuiImage(gui, 2, 0, roll_credits_progress, "mods/SpookyMode/files/intro_logo/aloittaa_colours.png", 1, 1, 1)
 for i, line in ipairs(lines) do
   -- Draw black shadow first
   GuiOptionsAddForNextWidget(gui, GUI_OPTION.Align_HorizontalCenter)

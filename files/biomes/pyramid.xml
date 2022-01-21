@@ -1,7 +1,7 @@
 <Biome>
   <Topology 
     name="Pyramid"
-    lua_script="mods/AdventureMode/files/biomes/pyramid.lua"
+    lua_script="mods/SpookyMode/files/biomes/pyramid.lua"
     >
   </Topology>
   <Materials 

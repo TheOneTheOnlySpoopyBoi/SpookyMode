@@ -1,4 +1,4 @@
-dofile_once("mods/AdventureMode/files/util.lua")
+dofile_once("mods/SpookyMode/files/util.lua")
 
 function get_state()
   local entity_id = GetUpdatedEntityID()
@@ -71,8 +71,8 @@ function interacting(entity_who_interacted, entity_interacted, interactable_name
 
   local x, y = EntityGetTransform( entity_who_interacted )
 
-  GlobalsSetValue("AdventureMode_respawn_x", x)
-  GlobalsSetValue("AdventureMode_respawn_y", y)
+  GlobalsSetValue("SpookyMode_respawn_x", x)
+  GlobalsSetValue("SpookyMode_respawn_y", y)
   
   local state = get_state()
   if state.progress then

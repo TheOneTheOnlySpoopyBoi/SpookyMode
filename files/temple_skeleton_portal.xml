@@ -48,7 +48,7 @@
 	</SpriteParticleEmitterComponent>
 
 	<LuaComponent 
-		script_source_file="mods/AdventureMode/files/temple_skeleton_spawn.lua"
+		script_source_file="mods/SpookyMode/files/temple_skeleton_spawn.lua"
 		execute_every_n_frame="180"
 	>
 	</LuaComponent>
