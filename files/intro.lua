@@ -4,7 +4,6 @@ dofile_once("mods/SpookyMode/files/camera.lua")
 
 set_controls_enabled(false)
 sequence(function()
-
   local world_state = GameGetWorldStateEntity()
   EntityAddComponent(world_state, "LuaComponent", {
 	  script_source_file="mods/SpookyMode/files/music_player.lua",
@@ -13,24 +12,20 @@ sequence(function()
   })
   
   set_camera_manual(true)
-  camera_set_position(400, -800)
-  -- camera_tracking_shot(400, -800, 400, -580, 0.0025)
-  EntityLoad("mods/SpookyMode/files/intro_logo/aloittaa.xml", 400, -850)
-  GameCreateSpriteForXFrames("mods/SpookyMode/files/intro_logo/version_info.png", 550, -850, true, 0, 0, 500, false)
-  camera_tracking_shot(400, -800, 400, -800, 0.01)
+  -- Need to wait a few frames otherwise setting the camera position won't work for some reason...
+  wait(20)
+  camera_set_position(-1668, -639)
+  wait(160)
+  camera_pan_to(-1668, -563, 0.5) -- Pan down with the sinking ship
   wait(180)
-  camera_tracking_shot(400, -800, 400, -630, 0.0025)
+  camera_pan_to(-1572, -591, 0.5) -- Pan back up to sleeping player
   wait(250)
-  -- camera_tracking_shot(400, -580, 600, -580, 0.002)
-  camera_tracking_shot(400, -630, 570, -630, 0.002)
-  camera_tracking_shot(570, -630, 570, -580, 0.007)
+  camera_pan_to(-1230, -591, 0.4) -- Follow player
 end,
 function()
   local player = EntityGetWithTag("player_unit")[1]
   local x, y = EntityGetTransform(player)
-  local sheep = EntityLoad("data/entities/animals/sheep.xml", x - 30, y)
   local character_data_component = EntityGetFirstComponentIncludingDisabled(player, "CharacterDataComponent")
-  local character_data_component_sheep = EntityGetFirstComponentIncludingDisabled(sheep, "CharacterDataComponent")
   local controls_component = EntityGetFirstComponentIncludingDisabled(player, "ControlsComponent")
   local platform_shooter_player_component = EntityGetFirstComponentIncludingDisabled(player, "PlatformShooterPlayerComponent")
   local wand_angle = 15
@@ -50,41 +45,34 @@ function()
   ComponentSetValue2(controls_component, "mMousePositionRaw", 5000, 0)
   ComponentSetValue2(controls_component, "mMousePositionRawPrev", 5000, 0)
   ComponentSetValue2(controls_component, "mFlyingTargetY", -9999)
+
+  wait(20)
+  local sinking_ship = EntityLoad("mods/SpookyMode/files/sinking_ship.xml", -1690, -560)
+
   -- ComponentSetValue2(character_data_component, "effect_hit_ground", false)
-  wait(400)
+  local sprite_component = find_component_by_values(player, "SpriteComponent", { image_file = "data/enemies_gfx/player.xml" })
+  ComponentRemoveTag(sprite_component, "character")
+  play_animation(player, "intro_sleep")
+  -- Make ship float
+  for i=1, 200 do
+    PhysicsApplyForce(sinking_ship, 0, -34)
+    wait(0)
+  end
+  -- Then slowly sink it
+  for i=1, 200 do
+    PhysicsApplyForce(sinking_ship, 0, -20)
+    wait(0)
+  end
+  wait(300)
+  play_animation(player, "intro_stand_up", "stand")
+  wait(300)
+  ComponentAddTag(sprite_component, "character")
   for i=1, 800 do
-    ComponentSetValue2(character_data_component, "mVelocity", 35, 0)
+    ComponentSetValue2(character_data_component, "mVelocity", 30, 0)
     ComponentSetValue2(character_data_component, "is_on_ground", true)
-
-    ComponentSetValue2(character_data_component_sheep, "mVelocity", 35 - 15 * (i/800), 0)
-    ComponentSetValue2(character_data_component_sheep, "is_on_ground", true)
     wait(0)
   end
-  -- sheep keeps walking but slows down more
-  for i=1, 160 do
-    ComponentSetValue2(character_data_component_sheep, "mVelocity", 20 - 15 * (i/160), 0)
-    ComponentSetValue2(character_data_component_sheep, "is_on_ground", true)
-    wait(0)
-  end
-
-  local damage_model_component_sheep = EntityGetFirstComponentIncludingDisabled(sheep, "DamageModelComponent")
-  ComponentSetValue2(damage_model_component_sheep, "air_in_lungs", -1)
-  ComponentSetValue2(damage_model_component_sheep, "air_in_lungs_max", 0)
-  local sheep_x, sheep_y = EntityGetTransform(sheep)
-  GamePlaySound("data/audio/Desktop/animals.bank", "animals/sheep/_death", sheep_x, sheep_y)
   wait(100)
-  -- The Noita turns around to look at the dead sheep
-  ComponentSetValue2(controls_component, "mAimingVector", -1, vy)
-  ComponentSetValue2(controls_component, "mAimingVectorNormalized", -5000, vy)
-  ComponentSetValue2(controls_component, "mAimingVectorNonZeroLatest", -5000, vy)
-  ComponentSetValue2(controls_component, "mMousePosition", -5000, 0)
-  wait(120)
-  -- And turns back to the temple
-  ComponentSetValue2(controls_component, "mAimingVector", 1, vy)
-  ComponentSetValue2(controls_component, "mAimingVectorNormalized", 5000, vy)
-  ComponentSetValue2(controls_component, "mAimingVectorNonZeroLatest", 5000, vy)
-  ComponentSetValue2(controls_component, "mMousePosition", 5000, 0)
-  wait(120)
 end
 ).onDone(function()
   set_camera_manual(false)

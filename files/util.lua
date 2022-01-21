@@ -203,3 +203,27 @@ function split_string(inputstr, sep)
   end
   return t
 end
+
+function play_animation(entity_id, animation_name, next_animation)
+	local sprite_components = EntityGetComponent(entity_id, "SpriteComponent")
+  for i,v in ipairs(sprite_components or {}) do
+    ComponentSetValue2(v, "rect_animation", animation_name)
+    if next_animation then
+      ComponentSetValue2(v, "next_rect_animation", next_animation)
+    end
+  end
+end
+
+function find_component_by_values(entity, component_type, values)
+  for i, comp in ipairs(EntityGetComponentIncludingDisabled(entity, component_type)) do
+    local found = true
+    for k, v in pairs(values) do
+      if ComponentGetValue2(comp, k) ~= v then
+        found = false
+      end
+    end
+    if found then
+      return comp
+    end
+  end
+end

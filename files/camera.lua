@@ -1,5 +1,10 @@
 -- dofile_once("data/scripts/lib/utilities.lua")
 
+local function get_distance( x1, y1, x2, y2 )
+	local result = math.sqrt( ( x2 - x1 ) ^ 2 + ( y2 - y1 ) ^ 2 )
+	return result
+end
+
 local function clamp(value, min, max)
 	value = math.max(value, min)
 	value = math.min(value, max)
@@ -43,9 +48,10 @@ function camera_set_position(x, y)
   local player = EntityGetWithTag("player_unit")[1]
   local platform_shooter_player_component = EntityGetFirstComponentIncludingDisabled(player, "PlatformShooterPlayerComponent")
   ComponentSetValue2(platform_shooter_player_component, "mDesiredCameraPos", x, y)
+  ComponentSetValue2(platform_shooter_player_component, "mSmoothedCameraPosition", x, y)
 end
 
-function camera_tracking_shot(start_x, start_y, end_x, end_y, speed)
+function camera_pan_to(target_x, target_y, speed)
   if not coroutine.running() then
     error("Needs to be called from within an async function", 2)
   end
@@ -57,12 +63,14 @@ function camera_tracking_shot(start_x, start_y, end_x, end_y, speed)
   local t = 0
   ComponentSetValue2(platform_shooter_player_component, "mDesiredCameraPos", cx, cy)
   wait(0)
+  local distance = get_distance(start_x, start_y, target_x, target_y)
+  local progress_speed = speed / distance
   while true do
-    t = t + speed
+    t = t + progress_speed
     if t >= 1 then
       t = 1
     end
-    cx, cy = smooth_vec_lerp(end_x, end_y, start_x, start_y, t)
+    cx, cy = smooth_vec_lerp(target_x, target_y, start_x, start_y, t)
     ComponentSetValue2(platform_shooter_player_component, "mDesiredCameraPos", cx, cy)
     ComponentSetValue2(platform_shooter_player_component, "mSmoothedCameraPosition", cx, cy)
     if t >= 1 then

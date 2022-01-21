@@ -63,7 +63,7 @@ ModTextFileSetContent("data/biome/_biomes_all.xml", tostring(xml))
 -- and so forth, then add those numbers (without png) to the chunks_to_load.lua
 local chunks = dofile_once("mods/SpookyMode/files/chunks_to_load.lua")
 
-local y_offset = -1 -- Move pixel scenes 1 chunk up (-512)
+local y_offset = -2 -- Move pixel scenes 2 chunks up
 local str = "<PixelScenes><mBufferedPixelScenes>"
 local pixel_scenes_root_folder = "mods/SpookyMode/files/pixel_scenes"
 for i, chunk in ipairs(chunks) do
@@ -82,7 +82,7 @@ ModTextFileSetContent("data/biome/_pixel_scenes.xml", str)
 
 local starting_position = 1
 local starting_positions = {
-  { x = -1542, y = -80 }, -- 1 Intro
+  { x = -1542, y = -600 }, -- 1 Intro
 }
 
 ModTextFileSetContent("mods/SpookyMode/_virtual/magic_numbers.xml", string.format([[
@@ -106,9 +106,9 @@ function OnPlayerSpawned(player)
   if GlobalsGetValue("SpookyMode_player_initialized", "0") == "0" then
     GlobalsSetValue("SpookyMode_player_initialized", "1")
     local world_state_entity = GameGetWorldStateEntity()
-    -- if starting_position == 1 then
-    --   EntityLoad("mods/SpookyMode/files/intro.xml")
-    -- else
+    if starting_position == 1 then
+      EntityLoad("mods/SpookyMode/files/intro.xml")
+    else
       GlobalsSetValue("SpookyMode_respawn_x", starting_positions[starting_position].x)
       GlobalsSetValue("SpookyMode_respawn_y", starting_positions[starting_position].y)
       EntityAddComponent(world_state_entity, "LuaComponent", {
@@ -116,7 +116,7 @@ function OnPlayerSpawned(player)
         execute_every_n_frame=1,
         execute_on_added=1
       })
-    -- end
+    end
     local world_state_component = EntityGetFirstComponentIncludingDisabled(world_state_entity, "WorldStateComponent")
     ComponentSetValue2(world_state_component, "intro_weather", true)
     ComponentSetValue2(world_state_component, "time", 1)
@@ -243,12 +243,9 @@ function OnWorldPreUpdate()
     if GuiButton(gui, new_id(), 0, 0, "Reload world") then
       BiomeMapLoad_KeepPlayer("data/biome_impl/biome_map.png")
     end
-    if GuiButton(gui, new_id(), 0, 0, "Spawn brazier") then
-      local player = EntityGetWithTag("player_unit")[1]
-      if player then
-        local x, y = EntityGetTransform(player)
-        EntityLoad("mods/SpookyMode/files/brazier.xml", x, y)
-      end
+    if GuiButton(gui, new_id(), 0, 0, "Print camera position") then
+      local cx, cy = GameGetCameraPos()
+      print(("Camera is at (%d, %d)"):format(cx, cy))
     end
     if GuiButton(gui, new_id(), 0, 0, "Bones rattling") then
       GamePlaySound("mods/SpookyMode/files/audio/SpookyMode.bank", "bones_rattle", 0, 0)
