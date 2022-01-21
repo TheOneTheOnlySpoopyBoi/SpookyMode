@@ -1,6 +1,7 @@
 <Entity >
 	
-	<InheritTransformComponent>
+	<InheritTransformComponent
+	parent_hotspot_tag="cape_root" >
 	</InheritTransformComponent>
    
     <VerletPhysicsComponent

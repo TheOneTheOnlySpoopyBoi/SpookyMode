@@ -370,7 +370,7 @@
   </HotspotComponent>
 
   <Entity name="cape">  
-<Base file="mods/SpookyMode/files/entities/verlet_chains/alchy_cape/alchy_cape.xml"> <InheritTransformComponent><Transform position.x="-1"  position.y="-7" ></Transform></InheritTransformComponent> </Base>
+    <Base file="mods/SpookyMode/files/entities/verlet_chains/alchy_cape/alchy_cape.xml"></Base>
   </Entity>
   
   <!-- belt -->
