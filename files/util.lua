@@ -204,13 +204,10 @@ function split_string(inputstr, sep)
   return t
 end
 
-function play_animation(entity_id, animation_name, next_animation)
-	local sprite_components = EntityGetComponent(entity_id, "SpriteComponent")
-  for i,v in ipairs(sprite_components or {}) do
-    ComponentSetValue2(v, "rect_animation", animation_name)
-    if next_animation then
-      ComponentSetValue2(v, "next_rect_animation", next_animation)
-    end
+function set_sprite_animation(component_id, animation_name, next_animation)
+  ComponentSetValue2(component_id, "rect_animation", animation_name)
+  if next_animation then
+    ComponentSetValue2(component_id, "next_rect_animation", next_animation)
   end
 end
 

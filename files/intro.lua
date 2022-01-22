@@ -50,9 +50,13 @@ function()
   local sinking_ship = EntityLoad("mods/SpookyMode/files/sinking_ship.xml", -1690, -560)
 
   -- ComponentSetValue2(character_data_component, "effect_hit_ground", false)
-  local sprite_component = find_component_by_values(player, "SpriteComponent", { image_file = "data/enemies_gfx/player.xml" })
-  ComponentRemoveTag(sprite_component, "character")
-  play_animation(player, "intro_sleep")
+  local sprite_component_player = find_component_by_values(player, "SpriteComponent", { image_file = "data/enemies_gfx/player.xml" })
+  local sprite_component_player_arm_no_item = find_component_by_values(player, "SpriteComponent", { image_file = "data/enemies_gfx/player_arm_no_item.xml" })
+  local sprite_components = { sprite_component_player, sprite_component_player_arm_no_item }
+  for i, comp in ipairs(sprite_components) do
+    ComponentRemoveTag(comp, "character")
+    set_sprite_animation(comp, "intro_sleep")
+  end
   -- Make ship float
   for i=1, 200 do
     PhysicsApplyForce(sinking_ship, 0, -34)
@@ -64,9 +68,22 @@ function()
     wait(0)
   end
   wait(300)
-  play_animation(player, "intro_stand_up", "stand")
+  for i, comp in ipairs(sprite_components) do
+    set_sprite_animation(comp, "intro_stand_up", "stand")
+  end
   wait(300)
-  ComponentAddTag(sprite_component, "character")
+
+  -- Re-add no-item arm otherwise it displays wrong for whatever reason...
+  EntityRemoveComponent(player, sprite_component_player_arm_no_item)
+  EntityAddComponent2(player, "SpriteComponent", {
+    _tags="right_arm_root,character",
+    image_file="data/enemies_gfx/player_arm_no_item.xml",
+    z_index=0.59
+  })
+
+  for i, comp in ipairs(sprite_components) do
+    ComponentAddTag(comp, "character")
+  end
   for i=1, 800 do
     ComponentSetValue2(character_data_component, "mVelocity", 30, 0)
     ComponentSetValue2(character_data_component, "is_on_ground", true)
