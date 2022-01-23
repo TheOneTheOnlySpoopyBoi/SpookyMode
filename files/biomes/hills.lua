@@ -9,15 +9,17 @@ RegisterSpawnFunction( 0xffd0d0b4, "spawn_treasure" )
 RegisterSpawnFunction( 0xff41704d, "spawn_specialshop" )
 RegisterSpawnFunction( 0xffffeedd, "init" )
 RegisterSpawnFunction( 0xff235a15, "spawn_music_machine" )
+RegisterSpawnFunction( 0xffef0000, "spawn_basic_enemies" )
+RegisterSpawnFunction( 0xffd7a643, "spawn_rocks" )
 
------------- SMALL ENEMIES ----------------------------------------------------
+------------ BASIC ENEMIES ----------------------------------------------------
 
-g_small_enemies =
+g_basic_enemies =
 {
 	total_prob = 0,
 	-- this is air, so nothing spawns at 0.6
 	{
-		prob   		= 1.5,
+		prob   		= 0.0,
 		min_count	= 0,
 		max_count	= 0,    
 		entity 	= ""
@@ -27,16 +29,10 @@ g_small_enemies =
 		prob   		= 0.3,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/zombie.xml"
+		entity 	= "mods/SpookyMode/files/entities/animals/zombie_weak.xml"
 	},
 	{
-		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/miner.xml"
-	},
-	{
-		prob   		= 0.025,
+		prob   		= 0.01,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/rat.xml"
@@ -75,20 +71,8 @@ g_unique_enemy =
 	{
 		prob   		= 0.5,
 		min_count	= 1,
-		max_count	= 3,    
-		entity 	= "data/entities/animals/slimeshooter.xml"
-	},
-	{
-		prob   		= 0.3,
-		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/animals/acidshooter.xml"
-	},
-	{
-		prob   		= 0.1,
-		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/giantshooter.xml"
+		entity 	= "data/entities/animals/zombie.xml"
 	},
 }
 
@@ -198,6 +182,39 @@ g_pumpkins =
 	}
 }
 
+g_rocks =
+{
+	total_prob = 0,
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_stone_01.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_stone_02.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_stone_03.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_stone_04.xml"
+	},
+}
+
 ------------ MISC --------------------------------------
 
 -- actual functions that get called from the wang generator
@@ -220,10 +237,12 @@ function init(x, y, w, h)
 	end
 end
 
-function spawn_small_enemies(x, y)
-	-- print("spawn_small_enemies")
-	if( y < 0 ) then return 0 end
-	spawn(g_small_enemies,x,y)
+function spawn_basic_enemies(x, y)
+	spawn(g_basic_enemies,x,y)
+end
+
+function spawn_rocks(x, y)
+	spawn(g_rocks,x,y)
 end
 
 function spawn_big_enemies(x, y)
