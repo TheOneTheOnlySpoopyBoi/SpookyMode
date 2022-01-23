@@ -85,7 +85,8 @@ function()
     ComponentAddTag(comp, "character")
   end
   for i=1, 800 do
-    ComponentSetValue2(character_data_component, "mVelocity", 30, 0)
+    local vx, vy = ComponentGetValue2(character_data_component, "mVelocity")
+    ComponentSetValue2(character_data_component, "mVelocity", 30, vy)
     ComponentSetValue2(character_data_component, "is_on_ground", true)
     wait(0)
   end
