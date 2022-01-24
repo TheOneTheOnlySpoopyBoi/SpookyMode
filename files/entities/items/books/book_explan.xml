@@ -1,0 +1,41 @@
+<Entity tags="scroll">
+	<Base file="data/entities/items/books/base_book.xml">
+		<BookComponent
+			_enabled="0"
+			>
+		</BookComponent>
+
+		<ParticleEmitterComponent 
+			_enabled="0"
+			>
+		</ParticleEmitterComponent>
+		
+		<PhysicsImageShapeComponent 
+			image_file="data/items_gfx/book_small.png"
+		></PhysicsImageShapeComponent>
+
+		<UIInfoComponent
+			name="Tounela's Legend"
+			>
+		</UIInfoComponent>
+		
+		<ItemComponent
+			ui_sprite="data/items_gfx/book.png"
+			item_name="Tounela's Legend"
+			ui_description="The legend of Tounela is one shrouded in mystery. 
+It's said to be across the great river. 
+Many have attempted to cross such river but all have fallen to a mysterious death."
+			>
+		</ItemComponent>
+		
+		<SpriteComponent
+			image_file="data/items_gfx/in_hand/book_in_hand.png"
+		></SpriteComponent>
+
+		
+		<AbilityComponent
+			ui_name="Tounela's Legend"
+			>
+		</AbilityComponent>
+	</Base>
+</Entity>

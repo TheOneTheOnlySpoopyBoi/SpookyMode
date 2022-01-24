@@ -164,10 +164,9 @@ function OnPlayerSpawned(player)
     for i, item in ipairs(items) do
       EntityKill(item)
     end
-    local water_potion = EntityLoad("data/entities/items/pickup/potion_water.xml")
-    AddMaterialInventoryMaterial(water_potion, "water", 300)
-    EntityAddChild(inventory_quick, water_potion)
-    -- GamePickUpInventoryItem(player, water_potion, false)
+    local book_explan = EntityLoad("mods/SpookyMode/files/entities/items/books/book_explan.xml")
+    EntityAddChild(inventory_quick, book_explan)
+    -- GamePickUpInventoryItem(player, book_explan, false)
 
     -- Add no-item-arm
     EntityAddComponent2(player, "SpriteComponent", {
