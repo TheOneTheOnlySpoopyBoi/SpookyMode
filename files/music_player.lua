@@ -102,13 +102,13 @@ if current_biome == "_EMPTY_" then
 		
 	else
 
-		current_music = "music/wandcave/01"
+		current_music = "_EMPTY_"
 
 	end
 	
 else
 
-	current_music = "music/wandcave/01"
+	current_music = "_EMPTY_"
 
 end
 previous_music = GlobalsGetValue("previous_music", 0)

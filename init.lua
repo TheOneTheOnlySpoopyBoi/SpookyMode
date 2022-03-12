@@ -208,9 +208,9 @@ function OnWorldPreUpdate()
   gui = gui or GuiCreate()
   GuiStartFrame(gui)
 
-  -- if GuiButton(gui, new_id(), 2, 200, "D") then
-  --   debug_menu_open = not debug_menu_open
-  -- end
+ if GuiButton(gui, new_id(), 2, 200, ":)") then
+   debug_menu_open = not debug_menu_open
+ end
 
   if debug_menu_open then
     GuiLayoutBeginVertical(gui, 1, 20)

@@ -66,7 +66,7 @@
       material_index="10" 
       material_max="0.53" 
       material_min="0.45" 
-      material_name="soil" 
+      material_name="soil_spook" 
       rare_polka_is_boxed="1" 
       rare_polka_probability="0.2" 
       rare_polka_radius_high="0.65" 
@@ -88,7 +88,7 @@
       material_index="10" 
       material_max="0.95" 
       material_min="0.53" 
-      material_name="sand_static" 
+      material_name="soil_spook_static" 
       rare_polka_is_boxed="1" 
       rare_polka_probability="0.2" 
       rare_polka_radius_high="0.65" 
@@ -373,7 +373,7 @@
       tree_extra_y="0" 
       tree_image_file="" 
       tree_image_visual="" 
-      tree_material="grass" 
+      tree_material="grass_spook" 
       tree_probability="0.828571" 
       tree_radius_high="0.414286" 
       tree_radius_low="0.228571" 
@@ -383,7 +383,7 @@
       visual_offset_y="7.5" 
       is_grass="1"
       grass_requires_neighbors="0"
-      material_on_top_of="soil"
+      material_on_top_of="soil_spook"
       >
     </VegetationComponent> -->
   </Materials>

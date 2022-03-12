@@ -11,6 +11,7 @@ RegisterSpawnFunction( 0xffffeedd, "init" )
 RegisterSpawnFunction( 0xff235a15, "spawn_music_machine" )
 RegisterSpawnFunction( 0xffef0000, "spawn_basic_enemies" )
 RegisterSpawnFunction( 0xffd7a643, "spawn_rocks" )
+RegisterSpawnFunction( 0xffff5a0f, "spawn_music_trigger" )
 
 ------------ BASIC ENEMIES ----------------------------------------------------
 
@@ -215,6 +216,46 @@ g_rocks =
 	},
 }
 
+g_tree =
+{
+	total_prob = 0,
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "mods/SpookyMode/files/props/tree1.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "mods/SpookyMode/files/props/tree3.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "mods/SpookyMode/files/props/tree4.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "mods/SpookyMode/files/props/tree5.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "mods/SpookyMode/files/props/tree6.xml"
+	},
+}
+
 ------------ MISC --------------------------------------
 
 -- actual functions that get called from the wang generator
@@ -293,10 +334,10 @@ function spawn_treasure( x, y )
 	EntityLoad( "data/entities/misc/towercheck.xml", x, y )
 end
 
-function spawn_music_machine( x, y )
-	EntityLoad( "data/entities/props/music_machines/music_machine_02.xml", x, y )
+function spawn_tree(x, y)
+	spawn(g_tree,x,y)
 end
 
-function spawn_tree(x, y)
-  EntityLoad("mods/SpookyMode/files/props/tree1.xml", x, y )
+function spawn_music_trigger( x, y )
+	EntityLoad( "mods/SpookyMode/files/entities/buildings/music_trigger_start.xml", x, y )
 end

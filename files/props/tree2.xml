@@ -1,7 +1,7 @@
 <Entity>
 
   <PixelSpriteComponent
-    image_file="data/vegetation/tree_spruce_1.png"
+    image_file="data/vegetation/swamp_cropped_02.png"
     anchor_x="32"
     anchor_y="123"
     material="wood_loose"
