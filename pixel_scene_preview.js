@@ -29,6 +29,9 @@ const chunks = [
   [ 3, 1 ],
   [ 4, 0 ],
   [ 4, 1 ],
+  [ 4, -1 ],
+  [ 5, -1 ],
+  [ 5, 0 ],
 ];
 
 let extents = { minX: 0, maxX: 0, minY: 0, maxY: 0, width: 0, height: 0 };
