@@ -1,0 +1,34 @@
+<Sprite 
+  filename="mods/SpookyMode/files/enemies_gfx/lake_swan_tail.png" 
+  offset_x="72" 
+  offset_y="70" 
+  default_animation="stand">
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="140" 
+    frame_wait="0.082" 
+    frame_width="151" 
+    frames_per_row="4" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" 
+    >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="140" 
+    frame_wait="0.082" 
+    frame_width="151" 
+    frames_per_row="4" 
+    name="eat" 
+    pos_x="0" 
+    pos_y="0" 
+    >
+
+  </RectAnimation>
+
+</Sprite>
+
